@@ -28,16 +28,18 @@ It was created for my own use, because I am too lazy to design my buttons, headi
   - > btn-info
   - > btn-danger
   - > btn-mute
-    > _(Note: Accent and Accent2 are my personal favourite colors (Purplish and Greenish), so gave them their buttons too)_
 
-  - **Button Sizes**
+_(Note: Accent and Accent2 are my personal favourite colors (Purplish and Greenish), so gave them their buttons too)_
 
-    - > btn-sm
-    - > btn-lg
+- **Button Sizes**
 
-  - **Button with icons**
-    - > btn-link-icon
-    - > btn-home-icon
+  - > btn-sm
+  - > btn-lg
+
+- **Button with icons**
+
+  - > btn-link-icon
+  - > btn-home-icon
 
 - **Margins**
 
@@ -51,7 +53,7 @@ It was created for my own use, because I am too lazy to design my buttons, headi
   - > py-1, py-2, py-3, py-4
   - > px-1, px-2, px-3, px-4
 
-_Paddings and Margins are based on EM units, which is best in resizing._
+_(Note: Paddings and Margins are based on EM units, which is best in resizing.)_
 
 - **Headings**
 
@@ -94,6 +96,6 @@ _Paddings and Margins are based on EM units, which is best in resizing._
 
 ### Feel free to contact, if you wan to contribute in this project.
 
-Text me on my Instagram account: [Instagram] (https://www.instagram.com/faraazy)
+Text me on my Instagram account: [Instagram](https://www.instagram.com/faraazy)
 
 **Peace** ✌
