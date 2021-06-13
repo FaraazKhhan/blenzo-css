@@ -9,11 +9,11 @@ It was created for my own use, because I am too lazy to design my buttons, headi
 
 - Standard File:
 
-  > https://github.com/FaraazKhhan/blenzo-css/css/blenzo.css
+  > https://github.com/FaraazKhhan/blenzo-css/blob/master/css/blenzo.css
 
 - Minified version:
 
-  > https://github.com/FaraazKhhan/blenzo-css/css/blenzo-min.css
+  > https://github.com/FaraazKhhan/blenzo-css/blob/master/css/blenzo-min.css
 
 ## Here are some example:
 
@@ -29,7 +29,7 @@ It was created for my own use, because I am too lazy to design my buttons, headi
   - > btn-danger
   - > btn-mute
 
-_(Note: Accent and Accent2 are my personal favourite colors (Purplish and Greenish), so gave them their buttons too)_
+_(Note: Accent and Accent2 are my personal favourite colors (Purplish and Greenish), so I gave them their buttons too)_
 
 - **Button Sizes**
 
