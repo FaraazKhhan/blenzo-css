@@ -1,0 +1,26 @@
+{
+  "name": "nostyle-css",
+  "version": "1.0.0",
+  "description": "with nostyle-css, you don't need enough css experience",
+  "main": "css/nostyle.css",
+  "style": "css/nostyle.css",
+  "files": [
+    "LICENSE.md",
+    "css/nostyle.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaraazKhhan/nostyle-css.git"
+  },
+  "keywords": [
+    "css",
+    "html",
+    "nostyle"
+  ],
+  "author": "Faraaz Khhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FaraazKhhan/nostyle-css/issues"
+  },
+  "homepage": "https://github.com/FaraazKhhan/nostyle-css#readme"
+}
