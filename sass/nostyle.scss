@@ -248,7 +248,7 @@ body {
 
 
 
-.mw {
+.maxw {
     &-100 {
         max-width: 100px;
     }
@@ -281,7 +281,7 @@ body {
     }
 }
 
-.mh {
+.maxh {
     &-100 {
         max-height: 100px;
     }
@@ -1481,6 +1481,9 @@ textarea.form-input {
         .navbar-link:not(:last-of-type) {
             margin-right: 2em;
         }
+    }
+    .main {
+        height: 100vh;
     }
     .heading-wrapper {
         padding: 6em 0;

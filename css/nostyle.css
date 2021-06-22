@@ -222,83 +222,83 @@ body {
   line-height: 2;
 }
 
-.mw-100 {
+.maxw-100 {
   max-width: 100px;
 }
 
-.mw-200 {
+.maxw-200 {
   max-width: 200px;
 }
 
-.mw-300 {
+.maxw-300 {
   max-width: 300px;
 }
 
-.mw-400 {
+.maxw-400 {
   max-width: 400px;
 }
 
-.mw-500 {
+.maxw-500 {
   max-width: 500px;
 }
 
-.mw-600 {
+.maxw-600 {
   max-width: 600px;
 }
 
-.mw-700 {
+.maxw-700 {
   max-width: 700px;
 }
 
-.mw-800 {
+.maxw-800 {
   max-width: 800px;
 }
 
-.mw-900 {
+.maxw-900 {
   max-width: 900px;
 }
 
-.mw-1000 {
+.maxw-1000 {
   max-width: 1000px;
 }
 
-.mh-100 {
+.maxh-100 {
   max-height: 100px;
 }
 
-.mh-200 {
+.maxh-200 {
   max-height: 200px;
 }
 
-.mh-300 {
+.maxh-300 {
   max-height: 300px;
 }
 
-.mh-400 {
+.maxh-400 {
   max-height: 400px;
 }
 
-.mh-500 {
+.maxh-500 {
   max-height: 500px;
 }
 
-.mh-600 {
+.maxh-600 {
   max-height: 600px;
 }
 
-.mh-700 {
+.maxh-700 {
   max-height: 700px;
 }
 
-.mh-800 {
+.maxh-800 {
   max-height: 800px;
 }
 
-.mh-900 {
+.maxh-900 {
   max-height: 900px;
 }
 
-.mh-1000 {
+.maxh-1000 {
   max-height: 1000px;
 }
 
@@ -1691,6 +1691,9 @@ textarea.form-input {
   }
   .navbar-menu .navbar-link:not(:last-of-type) {
     margin-right: 2em;
+  }
+  .main {
+    height: 100vh;
   }
   .heading-wrapper {
     padding: 6em 0;

@@ -5,6 +5,8 @@
 NoStyle CSS is a custom made CSS utility classes library.
 It was created for my own use, because I am too lazy to design my buttons, headings again and again, only if they follow same theme.
 
+## [Read Docs](https://faraazkhhan.github.io/nostyle-css)
+
 #### Simple add these imports according to your prefence and add class-list mentioned below as per need.
 
 - Standard File:
@@ -42,6 +44,7 @@ It will change all the colors under-the-hood.
 
   - > btn-sm
   - > btn-lg
+  - > btn-block
 
 - **Button with icons**
 
