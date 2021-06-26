@@ -30,6 +30,8 @@
     --color-white-400: #efefef;
 
     --color-navbar: hsl(240, 67%, 90%);
+    --color-nav-sidebar: hsl(240, 69%, 86%);
+    
     --color-lavender: #e6e6fa;
 
     --color-gray-400: rgb(82, 82, 82);
@@ -78,6 +80,7 @@
     --form-input-bg: rgba(0, 0, 0, 0.025);
     --box-radius-min: 4px;
     --border-size: 2px;
+    --focus-shadow-spread: 3px;
 }
 
 
@@ -90,6 +93,8 @@
     --color-white-400: rgb(16, 16, 16);
 
     --color-navbar: hsl(240, 11%, 18%);
+    --color-nav-sidebar: hsl(240, 11%, 14%);
+
     --color-lavender: rgb(20, 20, 25);
 
     --color-gray-400: rgb(173, 173, 173);
@@ -148,7 +153,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     color: var(--color-text);
     background-color: var(--color-bg);
-    line-height: 1.4;
+    line-height: 1.8;
     font-size: 12px;
 }
 
@@ -157,23 +162,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Utility classes */
-.fs {
-    &-sm {
-        font-size: 1rem;
-    }
-    &-md {
-        font-size: 1.5rem;
-    }
-    &-lg {
-        font-size: 2.5rem;
-    }
-    &-xl {
-        font-size: 3.5rem;
-    }
-    &-xxl {
-        font-size: 4.5rem;
-    }
-}
 
 .heading-wrapper {
     padding: 2.5em 0;
@@ -187,69 +175,122 @@ h1, h2, h3, h4, h5, h6 {
 .main {
     height: fit-content;
     width: 100%;
-    padding-top: 8vh;
+    padding-top: 66px;
 }
 
 // Sections
 .section {
     min-height: fit-content;
     padding: 1em;
-    background-color: var(--color-lavender);
+    // background-color: var(--color-lavender);
 }
 
-.fw {
-    &-thin {
+.font {
+    &-size-xs {
+        font-size: 0.75rem;
+        line-height: 1rem;
+    }
+    &-size-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }	
+    &-size-base {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }	
+    &-size-lg {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }	
+    &-size-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }	
+    &-size-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }	
+    &-size-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }	
+    &-size-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }	
+    &-size-5xl {
+        font-size: 3rem;
+        line-height: 1;
+    }	
+    &-size-6xl {
+        font-size: 3.75rem;
+        line-height: 1;
+    }	
+    &-size-7xl {
+        font-size: 4.5rem;
+        line-height: 1;
+    }	
+    &-size-8xl{
+        font-size: 6rem;
+        line-height: 1;
+    }	
+    &-size-9xl {
+        font-size: 8rem;
+        line-height: 1;
+    }
+
+    &-weight-thin {
         font-weight: 100;
     }
-    &-extralight {
+    &-weight-extralight {
         font-weight: 200;
     }
-    &-light {
+    &-weight-light {
         font-weight: 300;
     }
-    &-regular {
+    &-weight-regular {
         font-weight: 400;
     }
-    &-medium {
+    &-weight-medium {
         font-weight: 500;
     }
-    &-semibold {
+    &-weight-semibold {
         font-weight: 600;
     }
-    &-bold {
+    &-weight-bold {
         font-weight: 700;
     }
-    &-extrabold {
+    &-weight-extrabold {
         font-weight: 800;
     }
-    &-black {
+    &-weight-black {
         font-weight: 900;
     }
 }
 
-.lh {
-    &-06 {
+.line-height {
+    &-minus-2x {
         line-height: 0.6;
     }
-    &-08 {
+    &-minus-1x {
         line-height: 0.8;
     }
-    &-1 {
+    &-1x {
         line-height: 1;
     }
-    &-sm {
+    &-2x {
         line-height: 1.2;
     }
-    &-md {
+    &-3x {
         line-height: 1.4;
     }
-    &-lg {
+    &-4x {
         line-height: 1.6;
     }
-    &-xl {
+    &-5x {
         line-height: 1.8;
     }
-    &-xxl {
+    &-6x {
         line-height: 2;
     }
 }
@@ -292,6 +333,12 @@ h1, h2, h3, h4, h5, h6 {
     }
     &-1000 {
         max-width: 1000px;
+    }
+    &-1100 {
+        max-width: 1100px;
+    }
+    &-1200 {
+        max-width: 1200px;
     }
 }
 
@@ -545,7 +592,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-// DISPLAY
+/* DISPLAY */
 .block {
     display: block;
 }
@@ -555,16 +602,31 @@ h1, h2, h3, h4, h5, h6 {
 .inline {
     display: inline;
 }
+
+/* FLEX */
 .flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.flex-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+
+    &-dir-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-dir-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-row-reverse {
+        flex-direction: row-reverse;
+    }
+    &-col-reverse {
+        flex-direction: column-reverse;
+    }
 }
 .flex-wrap {
     &-100 {
@@ -588,7 +650,46 @@ h1, h2, h3, h4, h5, h6 {
         flex: 1 1 500px;
     }
 }
-.ai {
+
+/* GRID */
+.grid {
+    display: grid;
+
+    &-col-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    &-col-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &-col-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    &-col-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    &-col-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    &-row-2 {
+        grid-template-rows: repeat(2, 1fr);
+    }
+    &-row-3 {
+        grid-template-rows: repeat(3, 1fr);
+    }
+    &-row-4 {
+        grid-template-rows: repeat(4, 1fr);
+    }
+    &-row-5 {
+        grid-template-rows: repeat(5, 1fr);
+    }
+    &-row-6 {
+        grid-template-rows: repeat(6, 1fr);
+    }
+}
+
+
+.align-items {
     &-start {
         align-items: flex-start;
     }
@@ -599,7 +700,7 @@ h1, h2, h3, h4, h5, h6 {
         align-items: baseline;
     }
 }
-.jc {
+.justify-content {
     &-start {
         justify-content: flex-start;
     }
@@ -620,7 +721,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-button:focus,
+.btn:focus,
 textarea:focus,
 input:focus {
     outline: none;
@@ -651,7 +752,7 @@ input:focus {
             
             &:focus {
                 border-color: var(--color-success-400);
-                box-shadow: 0 0 0 2.5px var(--color-success-alpha40);
+                box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-success-alpha40);
             }
         }
         &::before {
@@ -675,7 +776,7 @@ input:focus {
     
             &:focus {
                 border-color: var(--color-danger-400);
-                box-shadow: 0 0 0 2.5px var(--color-danger-alpha40);
+                box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-danger-alpha40);
             }
         }
         &::before {
@@ -699,7 +800,7 @@ input:focus {
     
             &:focus {
                 border-color: var(--color-warning-400);
-                box-shadow: 0 0 0 2.5px var(--color-warning-alpha40);
+                box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-warning-alpha40);
             }
         }
         &::before {
@@ -725,7 +826,7 @@ input:focus {
 .form-input {
     --border-size: 1px;
     border: var(--border-size) solid var(--label-color-alpha40);
-    border-radius: var(--box-radius-min);
+    // border-radius: var(--box-radius-min);
     width: 100%;
     height: 2.25rem;
     padding: 0 0.5em;
@@ -736,7 +837,7 @@ input:focus {
 
     &:focus {
         border-color: var(--color-primary-400);
-        box-shadow: 0 0 0 2.5px var(--color-primary-alpha40);
+        box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-primary-alpha40);
     }
 }
 
@@ -789,25 +890,23 @@ textarea.form-input {
     }
     input[type="checkbox"]:focus + .form-check-label::before,
     input[type="checkbox"]:active + .form-check-label::before {
-        box-shadow: 0 0 0 2.5px var(--color-primary-alpha40);
+        box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-primary-alpha40);
     }
     
 }
 
-
-
 // Button classes
 .btn {
+    line-height: inherit;
     cursor: pointer;
-    width: fit-content;
-    display: inline-block;
-    text-decoration: none;
-    border: none;
-    border-radius: var(--box-radius-min);
-    padding: 0.35em 1.5em;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     font-family: inherit;
+    height: fit-content;
+    width: 100%;
+    padding: 0.35em 1.5em;
+    text-decoration: none;
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -815,14 +914,21 @@ textarea.form-input {
     background-color: rgba(255, 255, 255, 0.8);
     color: #000;
 
+    position: relative;
+
     &:focus {
-        box-shadow: 0 0 0 2.5px var(--color-label-alpha40);
+        box-shadow: 0 0 0 var(--focus-shadow-spread) var(--label-color-alpha40);
     }
-    &:hover {
-        background-color: rgba(255, 255, 255, 0.7);
+    &:hover::after {
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: inherit;
     }
-    &:active {
-        background-color: rgba(255, 255, 255, 0.8);
+    &:active::after {
+        background-color: rgba(0, 0, 0, 0.2);
     }
 }
 
@@ -841,14 +947,8 @@ textarea.form-input {
     background-color: var(--color-primary-400);
     color: #fff;
 
-    &:hover {
-        background-color: var(--color-primary-800);
-    }
-    &:active {
-        background-color: var(--color-primary-400);
-    }
     &:focus {
-        box-shadow: 0 0 0 2.5px var(--color-primary-alpha40);
+        box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-primary-alpha40);
     }
 }
 
@@ -856,14 +956,8 @@ textarea.form-input {
     background-color: var(--color-secondary-400);
     color: rgb(25, 25, 25);
 
-    &:hover {
-        background-color: var(--color-secondary-800);
-    }
-    &:active {
-        background-color: var(--color-secondary-400);
-    }
     &:focus {
-        box-shadow: 0 0 0 2.5px var(--color-secondary-alpha40);
+        box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-secondary-alpha40);
     }
 }
 
@@ -871,14 +965,8 @@ textarea.form-input {
     background-color: var(--color-warning-400);
     color: rgb(25, 25, 25);
 
-    &:hover {
-        background-color: var(--color-warning-800);
-    }
-    &:active {
-        background-color: var(--color-warning-400);
-    }
     &:focus {
-        box-shadow: 0 0 0 2.5px var(--color-warning-alpha40);
+        box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-warning-alpha40);
     }
 }
 
@@ -886,14 +974,8 @@ textarea.form-input {
     background-color: var(--color-danger-400);
     color: #fff;
 
-    &:hover {
-        background-color: var(--color-danger-800);
-    }
-    &:active {
-        background-color: var(--color-danger-400);
-    }
     &:focus {
-        box-shadow: 0 0 0 2.5px var(--color-danger-alpha40);
+        box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-danger-alpha40);
     }
 }
 
@@ -901,14 +983,8 @@ textarea.form-input {
     background-color: var(--color-mute-400);
     color: #fff;
 
-    &:hover {
-        background-color: var(--color-mute-800);
-    }
-    &:active {
-        background-color: var(--color-mute-400);
-    }
     &:focus {
-        box-shadow: 0 0 0 2.5px var(--color-mute-alpha40);
+        box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-mute-alpha40);
     }
 }
 
@@ -916,14 +992,8 @@ textarea.form-input {
     background-color: var(--color-info-400);
     color: #fff;
 
-    &:hover {
-        background-color: var(--color-info-800);
-    }
-    &:active {
-        background-color: var(--color-info-400);
-    }
     &:focus {
-        box-shadow: 0 0 0 2.5px var(--color-info-alpha40);
+        box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-info-alpha40);
     }
 }
 
@@ -931,14 +1001,8 @@ textarea.form-input {
     background-color: var(--color-success-400);
     color: #fff;
 
-    &:hover {
-        background-color: var(--color-success-800);
-    }
-    &:active {
-        background-color: var(--color-success-400);
-    }
     &:focus {
-        box-shadow: 0 0 0 2.5px var(--color-success-alpha40);
+        box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-success-alpha40);
     }
 }
 
@@ -946,7 +1010,7 @@ textarea.form-input {
     background-color: transparent;
     color: var(--color-primary-400);
     box-shadow: inset 0 0 0 var(--border-size) var(--color-primary-400);
-    
+
     &:hover {
       color: #fff;
       background-color: var(--color-mute-800);
@@ -955,9 +1019,9 @@ textarea.form-input {
       background-color: var(--color-mute-400);
     }
     &:focus {
-        box-shadow: 0 0 0 2.5px var(--color-primary-alpha40);
+        box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-primary-alpha40);
     }
-  }
+}
   
 
 .btn-icon {
@@ -966,42 +1030,49 @@ textarea.form-input {
         content: '\f35d';
         font-family: 'Font Awesome 5 Free';
         font-weight: 600;
+        font-size: 0.85rem;
         margin-right: 0.5em;
     }
     &-home::before {
         content: '\f015';
         font-family: 'Font Awesome 5 Free';
         font-weight: 600;
+        font-size: 0.85rem;
         margin-right: 0.5em;
     }
     &-edit::before {
         content: '\f044';
         font-family: 'Font Awesome 5 Free';
         font-weight: 600;
+        font-size: 0.85rem;
         margin-right: .5em;
     }
     &-add::before {
         content: '\f067';
         font-family: 'Font Awesome 5 Free';
         font-weight: 600;
+        font-size: 0.85rem;
         margin-right: .5em;
     }
     &-delete::before {
         content: '\f1f8';
         font-family: 'Font Awesome 5 Free';
         font-weight: 600;
+        font-size: 0.85rem;
         margin-right: .5em;
     }
     &-eyeopen::before {
         content: '\f06e';
         font-family: 'Font Awesome 5 Free';
         font-weight: 600;
+        font-size: 0.85rem;
         margin-right: .5em;
     }
     &-check::before {
         content: '\f00c';
         font-family: 'Font Awesome 5 Free';
         font-weight: 600;
+        font-size: 0.85rem;
         margin-right: .5em;
     }
 }
@@ -1010,9 +1081,9 @@ textarea.form-input {
 // NAVBAR 
 
 .navbar {
-    height: 8vh;
+    height: 66px;
     max-height: 66px;
-    background-color: var(--color-lavender);
+    background-color: var(--color-navbar);
     position: fixed;
     top: 0;
     left: 0;
@@ -1020,9 +1091,8 @@ textarea.form-input {
     z-index: 9999;
 
     &-container {
-        height: inherit;
+        height: 100%;
         width: 90%;
-        max-width: 1000px;
         margin: 0 auto;
 
         display: flex;
@@ -1049,7 +1119,7 @@ textarea.form-input {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--color-lavender);
+            background-color: var(--color-navbar);
 
             &::before {
                 content: '\f0c9';
@@ -1076,11 +1146,11 @@ textarea.form-input {
         font-size: 1.2rem;
 
         position: fixed;
-        top: 8vh;
+        top: 66px;
         bottom: 0;
         right: 0;
         transform: translateX(100%);
-        background-color: var(--color-navbar);
+        background-color: var(--color-nav-sidebar);
         box-shadow: -8px 5 24px rgba(0, 0, 0, 0.5);
 
         transition: transform .3s ease;
@@ -1097,9 +1167,15 @@ textarea.form-input {
             color: inherit;
             font-weight: 500;
             padding: 0.35em 0.5em;
+
+            &:focus {
+                outline: none;
+                color: var(--color-primary-400);
+            }
         }
 
-        &:hover {
+        &:hover,
+        &:active {
             color: var(--color-primary-200);
             box-shadow: inset 0 -2px 0 var(--color-primary-400);
         }
@@ -1107,9 +1183,692 @@ textarea.form-input {
 }
 
 
+// .outline {
+//     &-primary {
+//         box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-primary-400);
+//     }
+//     &-secondary {
+//         box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-secondary-400);
+//     }
+//     &-warning {
+//         box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-warning-400);
+//     }
+//     &-danger {
+//         box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-danger-400);
+//     }
+//     &-info {
+//         box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-info-400);
+//     }
+//     &-success {
+//         box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-success-400);
+//     }
+//     &-mute {
+//         box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-mute-400);
+//     }
+//     &-white {
+//         box-shadow: 0 0 0 var(--focus-shadow-spread) #fff;
+//     }
+//     &-black {
+//         box-shadow: 0 0 0 var(--focus-shadow-spread) #000;
+//     }
+//     &-gray {
+//         box-shadow: 0 0 0 var(--focus-shadow-spread) var(--color-gray-400);
+
+//         &-50 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #F9FAFB;
+//         }
+//         &-100 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #F3F4F6;
+//         }
+//         &-200 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #E5E7EB;
+//         }
+//         &-300 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #D1D5DB;
+//         }
+//         &-400 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #9CA3AF;
+//         }
+//         &-500 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #6B7280;
+//         }
+//         &-600 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #4B5563;
+//         }
+//         &-700 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #374151;
+//         }
+//         &-800 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #1F2937;
+//         }
+//         &-900 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #111827;
+//         }
+//     }
+
+//     &-red {
+//         &-50 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #FEF2F2;
+//         }
+//         &-100 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #fce2e2;
+//         }
+//         &-200 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #F9CACA;
+//         }
+//         &-300 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #F7A4A5;
+//         }
+//         &-400 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #F47071;
+//         }
+//         &-500 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #F04744;
+//         }
+//         &-600 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #DD3E27;
+//         }
+//         &-700 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #B9321D;
+//         }
+//         &-800 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #9A281C;
+//         }
+//         &-900 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #7F211D;
+//         }
+//     }
+//     // yellow
+//     &-yellow {
+//         &-50 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #FFFBEB;
+//         }
+//         &-100 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #FEF3C7;
+//         }
+//         &-200 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #FDE68A;
+//         }
+//         &-300 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #FCD34D;
+//         }
+//         &-400 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #FBBF34;
+//         }
+//         &-500 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #F49E2D;
+//         }
+//         &-600 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #D97824;
+//         }
+//         &-700 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #B4531A;
+//         }
+//         &-800 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #924013;
+//         }
+//         &-900 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #78350F;
+//         }
+//     }
+//     // green
+//     &-green {
+//         &-50 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #ECFDF5;
+//         }
+//         &-100 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #D1F9E5;
+//         }
+//         &-200 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #A7F3D0;
+//         }
+//         &-300 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #6DE7B7;
+//         }
+//         &-400 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #34D399;
+//         }
+//         &-500 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #10B981;
+//         }
+//         &-600 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #059669;
+//         }
+//         &-700 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #047857;
+//         }
+//         &-800 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #065F46;
+//         }
+//         &-900 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #064E3B;
+//         }
+//     }
+//     // iNDIGO 
+//     &-indigo {
+//         &-50 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #EEF2FF;
+//         }
+//         &-100 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #E0E7FF;
+//         }
+//         &-200 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #C7D2FE;
+//         }
+//         &-300 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #A5B4FC;
+//         }
+//         &-400 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #818CF8;
+//         }
+//         &-500 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #6366F1;
+//         }
+//         &-600 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #4F46E5;
+//         }
+//         &-700 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #4338CA;
+//         }
+//         &-800 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #3730A3;
+//         }
+//         &-900 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #312E81;
+//         }
+//     }
+//     // blue
+//     &-blue {
+//         &-50 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #EFF6FF;
+//         }
+//         &-100 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #DBEAFE;
+//         }
+//         &-200 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #BFDBFE;
+//         }
+//         &-300 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #93C5FD;
+//         }
+//         &-400 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #60A5FA;
+//         }
+//         &-500 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #3B82F6;
+//         }
+//         &-600 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #2563EB;
+//         }
+//         &-700 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #1D4ED8;
+//         }
+//         &-800 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #1E40AF;
+//         }
+//         &-900 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #1E3A8A;
+//         }
+//     }
+//     // purple
+//     &-purple {
+//         &-50 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #F5F3FF;
+//         }
+//         &-100 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #EDE9FE;
+//         }
+//         &-200 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #DDD6FE;
+//         }
+//         &-300 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #C4B5FD;
+//         }
+//         &-400 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #A78BFA;
+//         }
+//         &-500 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #8B5CF6;
+//         }
+//         &-600 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #7C3AED;
+//         }
+//         &-700 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #6D28D9;
+//         }
+//         &-800 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #5B21B6;
+//         }
+//         &-900 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #4C1D95;
+//         }
+//     }
+//     // pink
+//     &-pink {
+//         &-50 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #FDF2F8;
+//         }
+//         &-100 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #FCE7F3;
+//         }
+//         &-200 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #FBCFE8;
+//         }
+//         &-300 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #F9A8D4;
+//         }
+//         &-400 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #F472B6;
+//         }
+//         &-500 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #EC4899;
+//         }
+//         &-600 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #DB2777;
+//         }
+//         &-700 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #BE185D;
+//         }
+//         &-800 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #9D174D;
+//         }
+//         &-900 {
+//             box-shadow: 0 0 0 var(--focus-shadow-spread) #831843;
+//         }
+//     }
+// }
+
+
+/* BORDER */
+.border {
+    &-none {
+        border: none;
+    }
+    &-1 {
+        border-width: 1px;
+    }
+    &-2 {
+        border-width: 2px;
+    }
+    &-3 {
+        border-width: 3px;
+    }
+    &-4 {
+        border-width: 4px;
+    }
+    &-5 {
+        border-width: 5px;
+    }
+
+    /* Border Radius */
+    &-rounded-1x {
+        border-radius: 2px;
+    }
+    &-rounded-2x {
+        border-radius: 4px;
+    }
+    &-rounded-3x {
+        border-radius: 6px;
+    }
+    &-rounded-4x {
+        border-radius: 8px;
+    }
+    &-rounded-5x {
+        border-radius: 10px;
+    }
+    &-rounded-6x {
+        border-radius: 12px;
+    }
+    &-rounded-7x {
+        border-radius: 14px;
+    }
+    &-rounded-8x {
+        border-radius: 16px;
+    }
+    &-rounded-9x {
+        border-radius: 18px;
+    }
+    &-rounded-10x {
+        border-radius: 20px;
+    }
+    &-rounded-11x {
+        border-radius: 22px;
+    }
+    &-rounded-12x {
+        border-radius: 24px;
+    }
+    &-rounded-13x {
+        border-radius: 26px;
+    }
+    &-rounded-14x {
+        border-radius: 28px;
+    }
+    &-rounded-15x {
+        border-radius: 30px;
+    }
+    &-rounded-full {
+        border-radius: 50%;
+    }
+    
+
+    /* Border style */
+    &-dashed {
+        border-style: dashed;
+    }
+    &-dotted {
+        border-style: dotted;
+    }
+    &-double {
+        border-style: double;
+    }
+    &-groove {
+        border-style: groove;
+    }
+    &-ridge {
+        border-style: ridge;
+    }
+    &-solid {
+        border-style: solid;
+    }
+
+    /* Border Colors */
+    &-primary {
+        border-color: var(--color-primary-400);
+    }
+    &-secondary {
+        border-color: var(--color-secondary-400);
+    }
+    &-warning {
+        border-color: var(--color-warning-400);
+    }
+    &-danger {
+        border-color: var(--color-danger-400);
+    }
+    &-info {
+        border-color: var(--color-info-400);
+    }
+    &-success {
+        border-color: var(--color-success-400);
+    }
+    &-mute {
+        border-color: var(--color-mute-400);
+    }
+    &-white {
+        border-color: #fff;
+    }
+    &-black {
+        border-color: #000;
+    }
+    &-gray {
+        border-color: var(--color-gray-400);
+
+        &-50 {
+            border-color: #F9FAFB;
+        }
+        &-100 {
+            border-color: #F3F4F6;
+        }
+        &-200 {
+            border-color: #E5E7EB;
+        }
+        &-300 {
+            border-color: #D1D5DB;
+        }
+        &-400 {
+            border-color: #9CA3AF;
+        }
+        &-500 {
+            border-color: #6B7280;
+        }
+        &-600 {
+            border-color: #4B5563;
+        }
+        &-700 {
+            border-color: #374151;
+        }
+        &-800 {
+            border-color: #1F2937;
+        }
+        &-900 {
+            border-color: #111827;
+        }
+    }
+
+    &-red {
+        &-50 {
+            border-color: #FEF2F2;
+        }
+        &-100 {
+            border-color: #fce2e2;
+        }
+        &-200 {
+            border-color: #F9CACA;
+        }
+        &-300 {
+            border-color: #F7A4A5;
+        }
+        &-400 {
+            border-color: #F47071;
+        }
+        &-500 {
+            border-color: #F04744;
+        }
+        &-600 {
+            border-color: #DD3E27;
+        }
+        &-700 {
+            border-color: #B9321D;
+        }
+        &-800 {
+            border-color: #9A281C;
+        }
+        &-900 {
+            border-color: #7F211D;
+        }
+    }
+    // yellow
+    &-yellow {
+        &-50 {
+            border-color: #FFFBEB;
+        }
+        &-100 {
+            border-color: #FEF3C7;
+        }
+        &-200 {
+            border-color: #FDE68A;
+        }
+        &-300 {
+            border-color: #FCD34D;
+        }
+        &-400 {
+            border-color: #FBBF34;
+        }
+        &-500 {
+            border-color: #F49E2D;
+        }
+        &-600 {
+            border-color: #D97824;
+        }
+        &-700 {
+            border-color: #B4531A;
+        }
+        &-800 {
+            border-color: #924013;
+        }
+        &-900 {
+            border-color: #78350F;
+        }
+    }
+    // green
+    &-green {
+        &-50 {
+            border-color: #ECFDF5;
+        }
+        &-100 {
+            border-color: #D1F9E5;
+        }
+        &-200 {
+            border-color: #A7F3D0;
+        }
+        &-300 {
+            border-color: #6DE7B7;
+        }
+        &-400 {
+            border-color: #34D399;
+        }
+        &-500 {
+            border-color: #10B981;
+        }
+        &-600 {
+            border-color: #059669;
+        }
+        &-700 {
+            border-color: #047857;
+        }
+        &-800 {
+            border-color: #065F46;
+        }
+        &-900 {
+            border-color: #064E3B;
+        }
+    }
+    // iNDIGO 
+    &-indigo {
+        &-50 {
+            border-color: #EEF2FF;
+        }
+        &-100 {
+            border-color: #E0E7FF;
+        }
+        &-200 {
+            border-color: #C7D2FE;
+        }
+        &-300 {
+            border-color: #A5B4FC;
+        }
+        &-400 {
+            border-color: #818CF8;
+        }
+        &-500 {
+            border-color: #6366F1;
+        }
+        &-600 {
+            border-color: #4F46E5;
+        }
+        &-700 {
+            border-color: #4338CA;
+        }
+        &-800 {
+            border-color: #3730A3;
+        }
+        &-900 {
+            border-color: #312E81;
+        }
+    }
+    // blue
+    &-blue {
+        &-50 {
+            border-color: #EFF6FF;
+        }
+        &-100 {
+            border-color: #DBEAFE;
+        }
+        &-200 {
+            border-color: #BFDBFE;
+        }
+        &-300 {
+            border-color: #93C5FD;
+        }
+        &-400 {
+            border-color: #60A5FA;
+        }
+        &-500 {
+            border-color: #3B82F6;
+        }
+        &-600 {
+            border-color: #2563EB;
+        }
+        &-700 {
+            border-color: #1D4ED8;
+        }
+        &-800 {
+            border-color: #1E40AF;
+        }
+        &-900 {
+            border-color: #1E3A8A;
+        }
+    }
+    // purple
+    &-purple {
+        &-50 {
+            border-color: #F5F3FF;
+        }
+        &-100 {
+            border-color: #EDE9FE;
+        }
+        &-200 {
+            border-color: #DDD6FE;
+        }
+        &-300 {
+            border-color: #C4B5FD;
+        }
+        &-400 {
+            border-color: #A78BFA;
+        }
+        &-500 {
+            border-color: #8B5CF6;
+        }
+        &-600 {
+            border-color: #7C3AED;
+        }
+        &-700 {
+            border-color: #6D28D9;
+        }
+        &-800 {
+            border-color: #5B21B6;
+        }
+        &-900 {
+            border-color: #4C1D95;
+        }
+    }
+    // pink
+    &-pink {
+        &-50 {
+            border-color: #FDF2F8;
+        }
+        &-100 {
+            border-color: #FCE7F3;
+        }
+        &-200 {
+            border-color: #FBCFE8;
+        }
+        &-300 {
+            border-color: #F9A8D4;
+        }
+        &-400 {
+            border-color: #F472B6;
+        }
+        &-500 {
+            border-color: #EC4899;
+        }
+        &-600 {
+            border-color: #DB2777;
+        }
+        &-700 {
+            border-color: #BE185D;
+        }
+        &-800 {
+            border-color: #9D174D;
+        }
+        &-900 {
+            border-color: #831843;
+        }
+    }
+}
+
 
 /* COLOR MODiFIERS */ 
-.color {
+.text {
     &-primary {
         color: var(--color-primary-400);
     }
@@ -1131,14 +1890,276 @@ textarea.form-input {
     &-mute {
         color: var(--color-mute-400);
     }
-    &-gray {
-        color: var(--color-gray-400);
-    }
     &-white {
         color: #fff;
     }
     &-black {
         color: #000;
+    }
+    &-gray {
+        color: var(--color-gray-400);
+
+        &-50 {
+            color: #F9FAFB;
+        }
+        &-100 {
+            color: #F3F4F6;
+        }
+        &-200 {
+            color: #E5E7EB;
+        }
+        &-300 {
+            color: #D1D5DB;
+        }
+        &-400 {
+            color: #9CA3AF;
+        }
+        &-500 {
+            color: #6B7280;
+        }
+        &-600 {
+            color: #4B5563;
+        }
+        &-700 {
+            color: #374151;
+        }
+        &-800 {
+            color: #1F2937;
+        }
+        &-900 {
+            color: #111827;
+        }
+    }
+
+    &-red {
+        &-50 {
+            color: #FEF2F2;
+        }
+        &-100 {
+            color: #fce2e2;
+        }
+        &-200 {
+            color: #F9CACA;
+        }
+        &-300 {
+            color: #F7A4A5;
+        }
+        &-400 {
+            color: #F47071;
+        }
+        &-500 {
+            color: #F04744;
+        }
+        &-600 {
+            color: #DD3E27;
+        }
+        &-700 {
+            color: #B9321D;
+        }
+        &-800 {
+            color: #9A281C;
+        }
+        &-900 {
+            color: #7F211D;
+        }
+    }
+    // yellow
+    &-yellow {
+        &-50 {
+            color: #FFFBEB;
+        }
+        &-100 {
+            color: #FEF3C7;
+        }
+        &-200 {
+            color: #FDE68A;
+        }
+        &-300 {
+            color: #FCD34D;
+        }
+        &-400 {
+            color: #FBBF34;
+        }
+        &-500 {
+            color: #F49E2D;
+        }
+        &-600 {
+            color: #D97824;
+        }
+        &-700 {
+            color: #B4531A;
+        }
+        &-800 {
+            color: #924013;
+        }
+        &-900 {
+            color: #78350F;
+        }
+    }
+    // green
+    &-green {
+        &-50 {
+            color: #ECFDF5;
+        }
+        &-100 {
+            color: #D1F9E5;
+        }
+        &-200 {
+            color: #A7F3D0;
+        }
+        &-300 {
+            color: #6DE7B7;
+        }
+        &-400 {
+            color: #34D399;
+        }
+        &-500 {
+            color: #10B981;
+        }
+        &-600 {
+            color: #059669;
+        }
+        &-700 {
+            color: #047857;
+        }
+        &-800 {
+            color: #065F46;
+        }
+        &-900 {
+            color: #064E3B;
+        }
+    }
+    // iNDIGO 
+    &-indigo {
+        &-50 {
+            color: #EEF2FF;
+        }
+        &-100 {
+            color: #E0E7FF;
+        }
+        &-200 {
+            color: #C7D2FE;
+        }
+        &-300 {
+            color: #A5B4FC;
+        }
+        &-400 {
+            color: #818CF8;
+        }
+        &-500 {
+            color: #6366F1;
+        }
+        &-600 {
+            color: #4F46E5;
+        }
+        &-700 {
+            color: #4338CA;
+        }
+        &-800 {
+            color: #3730A3;
+        }
+        &-900 {
+            color: #312E81;
+        }
+    }
+    // blue
+    &-blue {
+        &-50 {
+            color: #EFF6FF;
+        }
+        &-100 {
+            color: #DBEAFE;
+        }
+        &-200 {
+            color: #BFDBFE;
+        }
+        &-300 {
+            color: #93C5FD;
+        }
+        &-400 {
+            color: #60A5FA;
+        }
+        &-500 {
+            color: #3B82F6;
+        }
+        &-600 {
+            color: #2563EB;
+        }
+        &-700 {
+            color: #1D4ED8;
+        }
+        &-800 {
+            color: #1E40AF;
+        }
+        &-900 {
+            color: #1E3A8A;
+        }
+    }
+    // purple
+    &-purple {
+        &-50 {
+            color: #F5F3FF;
+        }
+        &-100 {
+            color: #EDE9FE;
+        }
+        &-200 {
+            color: #DDD6FE;
+        }
+        &-300 {
+            color: #C4B5FD;
+        }
+        &-400 {
+            color: #A78BFA;
+        }
+        &-500 {
+            color: #8B5CF6;
+        }
+        &-600 {
+            color: #7C3AED;
+        }
+        &-700 {
+            color: #6D28D9;
+        }
+        &-800 {
+            color: #5B21B6;
+        }
+        &-900 {
+            color: #4C1D95;
+        }
+    }
+    // pink
+    &-pink {
+        &-50 {
+            color: #FDF2F8;
+        }
+        &-100 {
+            color: #FCE7F3;
+        }
+        &-200 {
+            color: #FBCFE8;
+        }
+        &-300 {
+            color: #F9A8D4;
+        }
+        &-400 {
+            color: #F472B6;
+        }
+        &-500 {
+            color: #EC4899;
+        }
+        &-600 {
+            color: #DB2777;
+        }
+        &-700 {
+            color: #BE185D;
+        }
+        &-800 {
+            color: #9D174D;
+        }
+        &-900 {
+            color: #831843;
+        }
     }
 }
 
@@ -1164,14 +2185,276 @@ textarea.form-input {
     &-mute {
         background-color: var(--color-mute-400);
     }
-    &-gray {
-        background-color: var(--color-gray-400);
-    }
     &-white {
         background-color: #fff;
     }
     &-black {
         background-color: #000;
+    }
+    &-gray {
+        background-color: var(--color-gray-400);
+
+        &-50 {
+            background-color: #F9FAFB;
+        }
+        &-100 {
+            background-color: #F3F4F6;
+        }
+        &-200 {
+            background-color: #E5E7EB;
+        }
+        &-300 {
+            background-color: #D1D5DB;
+        }
+        &-400 {
+            background-color: #9CA3AF;
+        }
+        &-500 {
+            background-color: #6B7280;
+        }
+        &-600 {
+            background-color: #4B5563;
+        }
+        &-700 {
+            background-color: #374151;
+        }
+        &-800 {
+            background-color: #1F2937;
+        }
+        &-900 {
+            background-color: #111827;
+        }
+    }
+    &-red {
+        &-50 {
+            background-color: #FEF2F2;
+        }
+        &-100 {
+            background-color: #fce2e2;
+        }
+        &-200 {
+            background-color: #F9CACA;
+        }
+        &-300 {
+            background-color: #F7A4A5;
+        }
+        &-400 {
+            background-color: #F47071;
+        }
+        &-500 {
+            background-color: #F04744;
+        }
+        &-600 {
+            background-color: #DD3E27;
+        }
+        &-700 {
+            background-color: #B9321D;
+        }
+        &-800 {
+            background-color: #9A281C;
+        }
+        &-900 {
+            background-color: #7F211D;
+        }
+    }
+    // yellow
+    &-yellow {
+        &-50 {
+            background-color: #FFFBEB;
+        }
+        &-100 {
+            background-color: #FEF3C7;
+        }
+        &-200 {
+            background-color: #FDE68A;
+        }
+        &-300 {
+            background-color: #FCD34D;
+        }
+        &-400 {
+            background-color: #FBBF34;
+        }
+        &-500 {
+            background-color: #F49E2D;
+        }
+        &-600 {
+            background-color: #D97824;
+        }
+        &-700 {
+            background-color: #B4531A;
+        }
+        &-800 {
+            background-color: #924013;
+        }
+        &-900 {
+            background-color: #78350F;
+        }
+    }
+    // green
+    &-green {
+        &-50 {
+            background-color: #ECFDF5;
+        }
+        &-100 {
+            background-color: #D1F9E5;
+        }
+        &-200 {
+            background-color: #A7F3D0;
+        }
+        &-300 {
+            background-color: #6DE7B7;
+        }
+        &-400 {
+            background-color: #34D399;
+        }
+        &-500 {
+            background-color: #10B981;
+        }
+        &-600 {
+            background-color: #059669;
+        }
+        &-700 {
+            background-color: #047857;
+        }
+        &-800 {
+            background-color: #065F46;
+        }
+        &-900 {
+            background-color: #064E3B;
+        }
+    }
+    // iNDIGO 
+    &-indigo {
+        &-50 {
+            background-color: #EEF2FF;
+        }
+        &-100 {
+            background-color: #E0E7FF;
+        }
+        &-200 {
+            background-color: #C7D2FE;
+        }
+        &-300 {
+            background-color: #A5B4FC;
+        }
+        &-400 {
+            background-color: #818CF8;
+        }
+        &-500 {
+            background-color: #6366F1;
+        }
+        &-600 {
+            background-color: #4F46E5;
+        }
+        &-700 {
+            background-color: #4338CA;
+        }
+        &-800 {
+            background-color: #3730A3;
+        }
+        &-900 {
+            background-color: #312E81;
+        }
+    }
+    // blue
+    &-blue {
+        &-50 {
+            background-color: #EFF6FF;
+        }
+        &-100 {
+            background-color: #DBEAFE;
+        }
+        &-200 {
+            background-color: #BFDBFE;
+        }
+        &-300 {
+            background-color: #93C5FD;
+        }
+        &-400 {
+            background-color: #60A5FA;
+        }
+        &-500 {
+            background-color: #3B82F6;
+        }
+        &-600 {
+            background-color: #2563EB;
+        }
+        &-700 {
+            background-color: #1D4ED8;
+        }
+        &-800 {
+            background-color: #1E40AF;
+        }
+        &-900 {
+            background-color: #1E3A8A;
+        }
+    }
+    // purple
+    &-purple {
+        &-50 {
+            background-color: #F5F3FF;
+        }
+        &-100 {
+            background-color: #EDE9FE;
+        }
+        &-200 {
+            background-color: #DDD6FE;
+        }
+        &-300 {
+            background-color: #C4B5FD;
+        }
+        &-400 {
+            background-color: #A78BFA;
+        }
+        &-500 {
+            background-color: #8B5CF6;
+        }
+        &-600 {
+            background-color: #7C3AED;
+        }
+        &-700 {
+            background-color: #6D28D9;
+        }
+        &-800 {
+            background-color: #5B21B6;
+        }
+        &-900 {
+            background-color: #4C1D95;
+        }
+    }
+
+    // pink
+    &-pink {
+        &-50 {
+            background-color: #FDF2F8;
+        }
+        &-100 {
+            background-color: #FCE7F3;
+        }
+        &-200 {
+            background-color: #FBCFE8;
+        }
+        &-300 {
+            background-color: #F9A8D4;
+        }
+        &-400 {
+            background-color: #F472B6;
+        }
+        &-500 {
+            background-color: #EC4899;
+        }
+        &-600 {
+            background-color: #DB2777;
+        }
+        &-700 {
+            background-color: #BE185D;
+        }
+        &-800 {
+            background-color: #9D174D;
+        }
+        &-900 {
+            background-color: #831843;
+        }
     }
 }
 
@@ -1185,26 +2468,59 @@ textarea.form-input {
     &-0 {
         margin: 0;
     }
-    &-015 {
-        margin: 0.15em;
+    &-minus-1 {
+        margin: -0.25rem;
     }
-    &-025 {
-        margin: 0.25em;
+    &-minus-05 {
+        margin: -0.125rem;
     }
     &-05 {
-        margin: 0.5em;
+        margin: 0.125rem;
     }
     &-1 {
-        margin: 1em;
+        margin: 0.25rem;
     }
     &-2 {
-        margin: 2em;
+        margin: 0.375rem;
     }
     &-3 {
-        margin: 3em;
+        margin: 0.5rem;
     }
     &-4 {
-        margin: 4em;
+        margin: 0.625rem;
+    }
+    &-5 {
+        margin: 0.75rem;
+    }
+    &-6 {
+        margin: 0.875rem;
+    }
+    &-7 {
+        margin: 1rem;
+    }
+    &-8 {
+        margin: 1.25rem;
+    }
+    &-9 {
+        margin: 1.5rem;
+    }
+    &-10 {
+        margin: 1.75rem;
+    }
+    &-11 {
+        margin: 2rem;
+    }
+    &-12 {
+        margin: 2.25rem;
+    }
+    &-13 {
+        margin: 2.5rem;
+    }
+    &-14 {
+        margin: 2.75rem;
+    }
+    &-15 {
+        margin: 3rem;
     }
 }
 
@@ -1214,33 +2530,77 @@ textarea.form-input {
         margin-top: 0;
         margin-bottom: 0;
     }
-    &-015 {
-        margin-top: 0.15em;
-        margin-bottom: 0.15em;
+    &-minus-1 {
+        margin-top: -0.25rem;
+        margin-bottom: -0.25rem;
     }
-    &-025 {
-        margin-top: 0.25em;
-        margin-bottom: 0.25em;
+    &-minus-05 {
+        margin-top: -0.125rem;
+        margin-bottom: -0.125rem;
     }
     &-05 {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
+        margin-top: 0.125rem;
+        margin-bottom: 0.125rem;
     }
     &-1 {
-        margin-top: 1em;
-        margin-bottom: 1em;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
     }
     &-2 {
-        margin-top: 2em;
-        margin-bottom: 2em;
+        margin-top: 0.375rem;
+        margin-bottom: 0.375rem;
     }
     &-3 {
-        margin-top: 3em;
-        margin-bottom: 3em;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
     }
     &-4 {
-        margin-top: 4em;
-        margin-bottom: 4em;
+        margin-top: 0.625rem;
+        margin-bottom: 0.625rem;
+    }
+    &-5 {
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+    &-6 {
+        margin-top: 0.875rem;
+        margin-bottom: 0.875rem;
+    }
+    &-7 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    &-8 {
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+    &-9 {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    &-10 {
+        margin-top: 1.75rem;
+        margin-bottom: 1.75rem;
+    }
+    &-11 {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    &-12 {
+        margin-top: 2.25rem;
+        margin-bottom: 2.25rem;
+    }
+    &-13 {
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+    &-14 {
+        margin-top: 2.75rem;
+        margin-bottom: 2.75rem;
+    }
+    &-15 {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
     } 
 }
 
@@ -1250,33 +2610,77 @@ textarea.form-input {
         margin-left: 0;
         margin-right: 0;
     }
-    &-015 {
-        margin-left: 0.15em;
-        margin-right: 0.15em;
+    &-minus-1 {
+        margin-left: -0.25rem;
+        margin-right: -0.25rem;
     }
-    &-025 {
-        margin-left: 0.25em;
-        margin-right: 0.25em;
+    &-minus-05 {
+        margin-left: -0.125rem;
+        margin-right: -0.125rem;
     }
     &-05 {
-        margin-left: 0.5em;
-        margin-right: 0.5em;
+        margin-left: 0.125rem;
+        margin-right: 0.125rem;
     }
     &-1 {
-        margin-left: 1em;
-        margin-right: 1em;
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
     }
     &-2 {
-        margin-left: 2em;
-        margin-right: 2em;
+        margin-left: 0.375rem;
+        margin-right: 0.375rem;
     }
     &-3 {
-        margin-left: 3em;
-        margin-right: 3em;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
     }
     &-4 {
-        margin-left: 4em;
-        margin-right: 4em;
+        margin-left: 0.625rem;
+        margin-right: 0.625rem;
+    }
+    &-5 {
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+    }
+    &-6 {
+        margin-left: 0.875rem;
+        margin-right: 0.875rem;
+    }
+    &-7 {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    &-8 {
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
+    }
+    &-9 {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+    &-10 {
+        margin-left: 1.75rem;
+        margin-right: 1.75rem;
+    }
+    &-11 {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    &-12 {
+        margin-left: 2.25rem;
+        margin-right: 2.25rem;
+    }
+    &-13 {
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+    }
+    &-14 {
+        margin-left: 2.75rem;
+        margin-right: 2.75rem;
+    }
+    &-15 {
+        margin-left: 3rem;
+        margin-right: 3rem;
     } 
 }
 
@@ -1285,26 +2689,59 @@ textarea.form-input {
     &-0 {
         margin-top: 0;
     }
-    &-015 {
-        margin-top: 0.15em; 
+    &-minus-1 {
+        margin-top: -0.25rem;
     }
-    &-025 {
-        margin-top: 0.25em;   
+    &-minus-05 {
+        margin-top: -0.125rem;
     }
     &-05 {
-        margin-top: 0.5em;
+        margin-top: 0.125rem;
     }
     &-1 {
-        margin-top: 1em;
+        margin-top: 0.25rem;
     }
     &-2 {
-        margin-top: 2em;
+        margin-top: 0.375rem;
     }
     &-3 {
-        margin-top: 3em;
+        margin-top: 0.5rem;
     }
     &-4 {
-        margin-top: 4em;
+        margin-top: 0.625rem;
+    }
+    &-5 {
+        margin-top: 0.75rem;
+    }
+    &-6 {
+        margin-top: 0.875rem;
+    }
+    &-7 {
+        margin-top: 1rem;
+    }
+    &-8 {
+        margin-top: 1.25rem;
+    }
+    &-9 {
+        margin-top: 1.5rem;
+    }
+    &-10 {
+        margin-top: 1.75rem;
+    }
+    &-11 {
+        margin-top: 2rem;
+    }
+    &-12 {
+        margin-top: 2.25rem;
+    }
+    &-13 {
+        margin-top: 2.5rem;
+    }
+    &-14 {
+        margin-top: 2.75rem;
+    }
+    &-15 {
+        margin-top: 3rem;
     } 
 }
 
@@ -1314,26 +2751,59 @@ textarea.form-input {
     &-0 {
         margin-bottom: 0;
     }
-    &-015 {
-        margin-bottom: 0.15em; 
+    &-minus-1 {
+        margin-bottom: -0.25rem;
     }
-    &-025 {
-        margin-bottom: 0.25em;   
+    &-minus-05 {
+        margin-bottom: -0.125rem;
     }
     &-05 {
-        margin-bottom: 0.5em;
+        margin-bottom: 0.125rem;
     }
     &-1 {
-        margin-bottom: 1em;
+        margin-bottom: 0.25rem;
     }
     &-2 {
-        margin-bottom: 2em;
+        margin-bottom: 0.375rem;
     }
     &-3 {
-        margin-bottom: 3em;
+        margin-bottom: 0.5rem;
     }
     &-4 {
-        margin-bottom: 4em;
+        margin-bottom: 0.625rem;
+    }
+    &-5 {
+        margin-bottom: 0.75rem;
+    }
+    &-6 {
+        margin-bottom: 0.875rem;
+    }
+    &-7 {
+        margin-bottom: 1rem;
+    }
+    &-8 {
+        margin-bottom: 1.25rem;
+    }
+    &-9 {
+        margin-bottom: 1.5rem;
+    }
+    &-10 {
+        margin-bottom: 1.75rem;
+    }
+    &-11 {
+        margin-bottom: 2rem;
+    }
+    &-12 {
+        margin-bottom: 2.25rem;
+    }
+    &-13 {
+        margin-bottom: 2.5rem;
+    }
+    &-14 {
+        margin-bottom: 2.75rem;
+    }
+    &-15 {
+        margin-bottom: 3rem;
     } 
 }
 
@@ -1343,26 +2813,59 @@ textarea.form-input {
     &-0 {
         margin-right: 0;
     }
-    &-015 {
-        margin-right: 0.15em; 
+    &-minus-1 {
+        margin-right: -0.25rem;
     }
-    &-025 {
-        margin-right: 0.25em;   
+    &-minus-05 {
+        margin-right: -0.125rem;
     }
     &-05 {
-        margin-right: 0.5em;
+        margin-right: 0.125rem;
     }
     &-1 {
-        margin-right: 1em;
+        margin-right: 0.25rem;
     }
     &-2 {
-        margin-right: 2em;
+        margin-right: 0.375rem;
     }
     &-3 {
-        margin-right: 3em;
+        margin-right: 0.5rem;
     }
     &-4 {
-        margin-right: 4em;
+        margin-right: 0.625rem;
+    }
+    &-5 {
+        margin-right: 0.75rem;
+    }
+    &-6 {
+        margin-right: 0.875rem;
+    }
+    &-7 {
+        margin-right: 1rem;
+    }
+    &-8 {
+        margin-right: 1.25rem;
+    }
+    &-9 {
+        margin-right: 1.5rem;
+    }
+    &-10 {
+        margin-right: 1.75rem;
+    }
+    &-11 {
+        margin-right: 2rem;
+    }
+    &-12 {
+        margin-right: 2.25rem;
+    }
+    &-13 {
+        margin-right: 2.5rem;
+    }
+    &-14 {
+        margin-right: 2.75rem;
+    }
+    &-15 {
+        margin-right: 3rem;
     } 
 }
 
@@ -1371,26 +2874,59 @@ textarea.form-input {
     &-0 {
         margin-left: 0;
     }
-    &-015 {
-        margin-left: 0.15em; 
+    &-minus-1 {
+        margin-left: -0.25rem;
     }
-    &-025 {
-        margin-left: 0.25em;   
+    &-minus-05 {
+        margin-left: -0.125rem;
     }
     &-05 {
-        margin-left: 0.5em;
+        margin-left: 0.125rem;
     }
     &-1 {
-        margin-left: 1em;
+        margin-left: 0.25rem;
     }
     &-2 {
-        margin-left: 2em;
+        margin-left: 0.375rem;
     }
     &-3 {
-        margin-left: 3em;
+        margin-left: 0.5rem;
     }
     &-4 {
-        margin-left: 4em;
+        margin-left: 0.625rem;
+    }
+    &-5 {
+        margin-left: 0.75rem;
+    }
+    &-6 {
+        margin-left: 0.875rem;
+    }
+    &-7 {
+        margin-left: 1rem;
+    }
+    &-8 {
+        margin-left: 1.25rem;
+    }
+    &-9 {
+        margin-left: 1.5rem;
+    }
+    &-10 {
+        margin-left: 1.75rem;
+    }
+    &-11 {
+        margin-left: 2rem;
+    }
+    &-12 {
+        margin-left: 2.25rem;
+    }
+    &-13 {
+        margin-left: 2.5rem;
+    }
+    &-14 {
+        margin-left: 2.75rem;
+    }
+    &-15 {
+        margin-left: 3rem;
     } 
 }
 
@@ -1400,224 +2936,481 @@ textarea.form-input {
     &-0 {
         padding: 0;
     }
-    &-015 {
-        padding: 0.15em;
+    &-minus-1 {
+        padding: -0.25rem;
     }
-    &-025 {
-        padding: 0.25em;
+    &-minus-05 {
+        padding: -0.125rem;
     }
     &-05 {
-        padding: 0.5em;
+        padding: 0.125rem;
     }
     &-1 {
-        padding: 1em;
+        padding: 0.25rem;
     }
     &-2 {
-        padding: 2em;
+        padding: 0.375rem;
     }
     &-3 {
-        padding: 3em;
+        padding: 0.5rem;
     }
     &-4 {
-        padding: 4em;
+        padding: 0.625rem;
+    }
+    &-5 {
+        padding: 0.75rem;
+    }
+    &-6 {
+        padding: 0.875rem;
+    }
+    &-7 {
+        padding: 1rem;
+    }
+    &-8 {
+        padding: 1.25rem;
+    }
+    &-9 {
+        padding: 1.5rem;
+    }
+    &-10 {
+        padding: 1.75rem;
+    }
+    &-11 {
+        padding: 2rem;
+    }
+    &-12 {
+        padding: 2.25rem;
+    }
+    &-13 {
+        padding: 2.5rem;
+    }
+    &-14 {
+        padding: 2.75rem;
+    }
+    &-15 {
+        padding: 3rem;
     }
 }
 
-/* Padding Y-Axis */
+/* Padding Y-axis */
 .py {
     &-0 {
         padding-top: 0;
         padding-bottom: 0;
     }
-    &-015 {
-        padding-top: 0.15em;
-        padding-bottom: 0.15em;
+    &-minus-1 {
+        padding-top: -0.25rem;
+        padding-bottom: -0.25rem;
     }
-    &-025 {
-        padding-top: 0.25em;
-        padding-bottom: 0.25em;
+    &-minus-05 {
+        padding-top: -0.125rem;
+        padding-bottom: -0.125rem;
     }
     &-05 {
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
+        padding-top: 0.125rem;
+        padding-bottom: 0.125rem;
     }
     &-1 {
-        padding-top: 1em;
-        padding-bottom: 1em;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
     }
     &-2 {
-        padding-top: 2em;
-        padding-bottom: 2em;
+        padding-top: 0.375rem;
+        padding-bottom: 0.375rem;
     }
     &-3 {
-        padding-top: 3em;
-        padding-bottom: 3em;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
     &-4 {
-        padding-top: 4em;
-        padding-bottom: 4em;
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+    }
+    &-5 {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+    &-6 {
+        padding-top: 0.875rem;
+        padding-bottom: 0.875rem;
+    }
+    &-7 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    &-8 {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+    }
+    &-9 {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    &-10 {
+        padding-top: 1.75rem;
+        padding-bottom: 1.75rem;
+    }
+    &-11 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    &-12 {
+        padding-top: 2.25rem;
+        padding-bottom: 2.25rem;
+    }
+    &-13 {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+    &-14 {
+        padding-top: 2.75rem;
+        padding-bottom: 2.75rem;
+    }
+    &-15 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
     } 
 }
 
-/* Padding X-Axis */ 
+/* Padding X-axis */
 .px {
     &-0 {
         padding-left: 0;
         padding-right: 0;
     }
-    &-015 {
-        padding-left: 0.15em;
-        padding-right: 0.15em;
+    &-minus-1 {
+        padding-left: -0.25rem;
+        padding-right: -0.25rem;
     }
-    &-025 {
-        padding-left: 0.25em;
-        padding-right: 0.25em;
+    &-minus-05 {
+        padding-left: -0.125rem;
+        padding-right: -0.125rem;
     }
     &-05 {
-        padding-left: 0.5em;
-        padding-right: 0.5em;
+        padding-left: 0.125rem;
+        padding-right: 0.125rem;
     }
     &-1 {
-        padding-left: 1em;
-        padding-right: 1em;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
     }
     &-2 {
-        padding-left: 2em;
-        padding-right: 2em;
+        padding-left: 0.375rem;
+        padding-right: 0.375rem;
     }
     &-3 {
-        padding-left: 3em;
-        padding-right: 3em;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
     &-4 {
-        padding-left: 4em;
-        padding-right: 4em;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
+    }
+    &-5 {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    &-6 {
+        padding-left: 0.875rem;
+        padding-right: 0.875rem;
+    }
+    &-7 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    &-8 {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+    &-9 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    &-10 {
+        padding-left: 1.75rem;
+        padding-right: 1.75rem;
+    }
+    &-11 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    &-12 {
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+    }
+    &-13 {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+    &-14 {
+        padding-left: 2.75rem;
+        padding-right: 2.75rem;
+    }
+    &-15 {
+        padding-left: 3rem;
+        padding-right: 3rem;
     } 
 }
 
-/* Padding Top */ 
+/* Padding Top */
 .pt {
     &-0 {
         padding-top: 0;
     }
-    &-015 {
-        padding-top: 0.15em; 
+    &-minus-1 {
+        padding-top: -0.25rem;
     }
-    &-025 {
-        padding-top: 0.25em;   
+    &-minus-05 {
+        padding-top: -0.125rem;
     }
     &-05 {
-        padding-top: 0.5em;
+        padding-top: 0.125rem;
     }
     &-1 {
-        padding-top: 1em;
+        padding-top: 0.25rem;
     }
     &-2 {
-        padding-top: 2em;
+        padding-top: 0.375rem;
     }
     &-3 {
-        padding-top: 3em;
+        padding-top: 0.5rem;
     }
     &-4 {
-        padding-top: 4em;
+        padding-top: 0.625rem;
+    }
+    &-5 {
+        padding-top: 0.75rem;
+    }
+    &-6 {
+        padding-top: 0.875rem;
+    }
+    &-7 {
+        padding-top: 1rem;
+    }
+    &-8 {
+        padding-top: 1.25rem;
+    }
+    &-9 {
+        padding-top: 1.5rem;
+    }
+    &-10 {
+        padding-top: 1.75rem;
+    }
+    &-11 {
+        padding-top: 2rem;
+    }
+    &-12 {
+        padding-top: 2.25rem;
+    }
+    &-13 {
+        padding-top: 2.5rem;
+    }
+    &-14 {
+        padding-top: 2.75rem;
+    }
+    &-15 {
+        padding-top: 3rem;
     } 
 }
 
 
-/* Padding Bottom */ 
+/* Padding Bottom */
 .pb {
     &-0 {
         padding-bottom: 0;
     }
-    &-015 {
-        padding-bottom: 0.15em; 
+    &-minus-1 {
+        padding-bottom: -0.25rem;
     }
-    &-025 {
-        padding-bottom: 0.25em;   
+    &-minus-05 {
+        padding-bottom: -0.125rem;
     }
     &-05 {
-        padding-bottom: 0.5em;
+        padding-bottom: 0.125rem;
     }
     &-1 {
-        padding-bottom: 1em;
+        padding-bottom: 0.25rem;
     }
     &-2 {
-        padding-bottom: 2em;
+        padding-bottom: 0.375rem;
     }
     &-3 {
-        padding-bottom: 3em;
+        padding-bottom: 0.5rem;
     }
     &-4 {
-        padding-bottom: 4em;
+        padding-bottom: 0.625rem;
+    }
+    &-5 {
+        padding-bottom: 0.75rem;
+    }
+    &-6 {
+        padding-bottom: 0.875rem;
+    }
+    &-7 {
+        padding-bottom: 1rem;
+    }
+    &-8 {
+        padding-bottom: 1.25rem;
+    }
+    &-9 {
+        padding-bottom: 1.5rem;
+    }
+    &-10 {
+        padding-bottom: 1.75rem;
+    }
+    &-11 {
+        padding-bottom: 2rem;
+    }
+    &-12 {
+        padding-bottom: 2.25rem;
+    }
+    &-13 {
+        padding-bottom: 2.5rem;
+    }
+    &-14 {
+        padding-bottom: 2.75rem;
+    }
+    &-15 {
+        padding-bottom: 3rem;
     } 
 }
 
 
-/* Padding Right */ 
+/* Padding Right */
 .pr {
     &-0 {
         padding-right: 0;
     }
-    &-015 {
-        padding-right: 0.15em; 
+    &-minus-1 {
+        padding-right: -0.25rem;
     }
-    &-025 {
-        padding-right: 0.25em;   
+    &-minus-05 {
+        padding-right: -0.125rem;
     }
     &-05 {
-        padding-right: 0.5em;
+        padding-right: 0.125rem;
     }
     &-1 {
-        padding-right: 1em;
+        padding-right: 0.25rem;
     }
     &-2 {
-        padding-right: 2em;
+        padding-right: 0.375rem;
     }
     &-3 {
-        padding-right: 3em;
+        padding-right: 0.5rem;
     }
     &-4 {
-        padding-right: 4em;
+        padding-right: 0.625rem;
+    }
+    &-5 {
+        padding-right: 0.75rem;
+    }
+    &-6 {
+        padding-right: 0.875rem;
+    }
+    &-7 {
+        padding-right: 1rem;
+    }
+    &-8 {
+        padding-right: 1.25rem;
+    }
+    &-9 {
+        padding-right: 1.5rem;
+    }
+    &-10 {
+        padding-right: 1.75rem;
+    }
+    &-11 {
+        padding-right: 2rem;
+    }
+    &-12 {
+        padding-right: 2.25rem;
+    }
+    &-13 {
+        padding-right: 2.5rem;
+    }
+    &-14 {
+        padding-right: 2.75rem;
+    }
+    &-15 {
+        padding-right: 3rem;
     } 
 }
 
-/* Padding Left */ 
+/* Padding Left */
 .pl {
     &-0 {
         padding-left: 0;
     }
-    &-015 {
-        padding-left: 0.15em; 
+    &-minus-1 {
+        padding-left: -0.25rem;
     }
-    &-025 {
-        padding-left: 0.25em;   
+    &-minus-05 {
+        padding-left: -0.125rem;
     }
     &-05 {
-        padding-left: 0.5em;
+        padding-left: 0.125rem;
     }
     &-1 {
-        padding-left: 1em;
+        padding-left: 0.25rem;
     }
     &-2 {
-        padding-left: 2em;
+        padding-left: 0.375rem;
     }
     &-3 {
-        padding-left: 3em;
+        padding-left: 0.5rem;
     }
     &-4 {
-        padding-left: 4em;
+        padding-left: 0.625rem;
+    }
+    &-5 {
+        padding-left: 0.75rem;
+    }
+    &-6 {
+        padding-left: 0.875rem;
+    }
+    &-7 {
+        padding-left: 1rem;
+    }
+    &-8 {
+        padding-left: 1.25rem;
+    }
+    &-9 {
+        padding-left: 1.5rem;
+    }
+    &-10 {
+        padding-left: 1.75rem;
+    }
+    &-11 {
+        padding-left: 2rem;
+    }
+    &-12 {
+        padding-left: 2.25rem;
+    }
+    &-13 {
+        padding-left: 2.5rem;
+    }
+    &-14 {
+        padding-left: 2.75rem;
+    }
+    &-15 {
+        padding-left: 3rem;
     } 
 }
 
-
-
 @media screen and (min-width: 600px) {
     body {
-        line-height: 1.6;
+        // line-height: 2;
         font-size: 15px;
+    }
+    .main {
+        max-height: 720px;
     }
     .heading-wrapper {
         padding: 4em 0;
+    }
+    .btn {
+        width: fit-content;
     }
 }
 
@@ -1645,21 +3438,58 @@ textarea.form-input {
         }
     }
 
-    .fs {
-        &-sm {
+    .font {
+        &-size-xs {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+        &-size-sm {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }	
+        &-size-base {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+        }	
+        &-size-lg {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }	
+        &-size-xl {
             font-size: 1.5rem;
-        }
-        &-md {
-            font-size: 2.5rem;
-        }
-        &-lg {
-            font-size: 3.5rem;
-        }
-        &-xl {
+            line-height: 2rem;
+        }	
+        &-size-2xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+        }	
+        &-size-3xl {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }	
+        &-size-4xl {
+            font-size: 3rem;
+            line-height: 1;
+        }	
+        &-size-5xl {
+            font-size: 3.75rem;
+            line-height: 1;
+        }		
+        &-size-6xl {
             font-size: 4.5rem;
-        }
-        &-xxl {
-            font-size: 5.5rem;
+            line-height: 1;
+        }	
+        &-size-7xl {
+            font-size: 6rem;
+            line-height: 1;
+        }	
+        &-size-8xl{
+            font-size: 8rem;
+            line-height: 1;
+        }	
+        &-size-9xl {
+            font-size: 9rem;
+            line-height: 1;
         }
     }
     
@@ -1667,7 +3497,7 @@ textarea.form-input {
 
 @media screen and (min-width: 961px) {
     body {
-        line-height: 1.8;
+        line-height: 2;
         font-size: 18px;
     }
     .navbar-menu {
@@ -1679,27 +3509,64 @@ textarea.form-input {
         }
     }
     .main {
-        height: 100vh;
+        min-height: 600px;
     }
     .heading-wrapper {
         padding: 6em 0;
     }
 
-    .fs {
-        &-sm {
-            font-size: 2rem;
+    .font {
+        &-size-xs {
+            font-size: 1rem;
+            line-height: 1.5rem;
         }
-        &-md {
+        &-size-sm {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+        }	
+        &-size-base {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }	
+        &-size-lg {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }	
+        &-size-xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+        }	
+        &-size-2xl {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }	
+        &-size-3xl {
             font-size: 3rem;
-        }
-        &-lg {
-            font-size: 4rem;
-        }
-        &-xl {
-            font-size: 5rem;
-        }
-        &-xxl {
+            line-height: 1;
+        }	
+        &-size-4xl {
+            font-size: 3.75rem;
+            line-height: 1;
+        }	
+        &-size-5xl {
+            font-size: 4.5rem;
+            line-height: 1;
+        }		
+        &-size-6xl {
             font-size: 6rem;
+            line-height: 1;
+        }	
+        &-size-7xl {
+            font-size: 8rem;
+            line-height: 1;
+        }	
+        &-size-8xl{
+            font-size: 9rem;
+            line-height: 1;
+        }	
+        &-size-9xl {
+            font-size: 10rem;
+            line-height: 1;
         }
     }
     
