@@ -296,14 +296,82 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* MIN-WIDTH */
+.min-width {
+    &-100 {
+        min-width: 100px;
+    }
+    &-200 {
+        min-width: 200px;
+    }
+    &-300 {
+        min-width: 300px;
+    }
+    &-400 {
+        min-width: 400px;
+    }
+    &-500 {
+        min-width: 500px;
+    }
+    &-600 {
+        min-width: 600px;
+    }
+    &-700 {
+        min-width: 700px;
+    }
+    &-800 {
+        min-width: 800px;
+    }
+    &-900 {
+        min-width: 900px;
+    }
+    &-1000 {
+        min-width: 1000px;
+    }
+    &-1100 {
+        min-width: 1100px;
+    }
+    &-1200 {
+        min-width: 1200px;
+    }
+}
 
+/* MIN-HEIGHT */
+.min-height {
+    &-100 {
+        min-height: 100px;
+    }
+    &-200 {
+        min-height: 200px;
+    }
+    &-300 {
+        min-height: 300px;
+    }
+    &-400 {
+        min-height: 400px;
+    }
+    &-500 {
+        min-height: 500px;
+    }
+    &-600 {
+        min-height: 600px;
+    }
+    &-700 {
+        min-height: 700px;
+    }
+    &-800 {
+        min-height: 800px;
+    }
+    &-900 {
+        min-height: 900px;
+    }
+    &-1000 {
+        min-height: 1000px;
+    }
+}
 
-
-
-
-
-
-.maxw {
+/* MAX-WIDTH */
+.max-width {
     &-100 {
         max-width: 100px;
     }
@@ -342,7 +410,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.maxh {
+/* MAX-HEIGHT */
+.max-height {
     &-100 {
         max-height: 100px;
     }
@@ -375,7 +444,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.w {
+/* WIDTH */
+.width {
     &-fit {
         width: fit-content;
     }
@@ -462,7 +532,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.h {
+/* HEIGTH */
+.height {
     &-fit {
         height: fit-content;
     }
@@ -550,7 +621,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
+/* TEXT ALIGNMENT */
 .text {
     &-center {
         text-align: center;
@@ -1081,8 +1152,8 @@ textarea.form-input {
 // NAVBAR 
 
 .navbar {
-    height: 66px;
-    max-height: 66px;
+    height: 50px;
+    max-height: 50px;
     background-color: var(--color-navbar);
     position: fixed;
     top: 0;
@@ -3415,6 +3486,11 @@ textarea.form-input {
 }
 
 @media screen and (min-width: 745px) {
+    .navbar {
+        height: 66px;
+        max-height: 66px;
+    }
+
     .navbar-menu {
         height: inherit;
         width: fit-content;
