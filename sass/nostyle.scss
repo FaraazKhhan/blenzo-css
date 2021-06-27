@@ -175,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
 .main {
     height: fit-content;
     width: 100%;
-    padding-top: 66px;
+    padding-top: 50px;
 }
 
 // Sections
@@ -1170,6 +1170,14 @@ textarea.form-input {
         align-items: center;
         justify-content: space-between;
     }
+
+    &-logo {
+        a {
+            text-decoration: none;
+            color: currentColor;
+        }
+    }
+
     &-menu {
         height: 1.5rem;
         width: 1.5rem;
@@ -1217,7 +1225,7 @@ textarea.form-input {
         font-size: 1.2rem;
 
         position: fixed;
-        top: 66px;
+        top: 50px;
         bottom: 0;
         right: 0;
         transform: translateX(100%);
@@ -3494,6 +3502,8 @@ textarea.form-input {
     .navbar-menu {
         height: inherit;
         width: fit-content;
+        // top: 66px;
+
         input[type="checkbox"],
         .navbar-menu-label {
             display: none;
@@ -3512,6 +3522,10 @@ textarea.form-input {
                 margin-right: 1.5em;
             }
         }
+    }
+
+    .main {
+        padding-top: 66px;
     }
 
     .font {

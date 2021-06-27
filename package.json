@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/FaraazKhhan/nostyle-css/issues"
   },
-  "homepage": "https://github.com/FaraazKhhan/nostyle-css#readme"
+  "homepage": "https://github.com/FaraazKhhan/nostyle-css#readme",
+  "dependencies": {
+    "gatsby-plugin-manifest": "^3.8.0"
+  }
 }
