@@ -15,8 +15,7 @@ function Template({ data }) {
       </Helmet>
       <div className="main height-100vh min-height-700 max-height-800">
         <div className="container max-width-1100">
-          <h1 className="font-size-4xl text-primary mt-12 mb-12">Docs</h1>
-          <h2 className="font-size-3xl text-yellow-400 mb-10">{title}</h2>
+          <h1 className="font-size-3xl text-green-400 mt-15 mb-10">{title}</h1>
           <div
           dangerouslySetInnerHTML={{ __html: content }}
           />

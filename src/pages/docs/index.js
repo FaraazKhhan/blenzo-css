@@ -1,7 +1,7 @@
 import React from "react"
 import Helmet from "react-helmet"
 import Layout from "../../components/Layout"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 function Hello({ data }) {
   const title = data.markdownRemark.frontmatter.title
@@ -17,6 +17,9 @@ function Hello({ data }) {
           <h1 className="font-size-4xl text-primary mt-12 mb-12">Docs</h1>
           {/* <h2 className="font-size-3xl text-yellow-400 mb-10">{title}</h2> */}
           <p dangerouslySetInnerHTML={{ __html: content }}></p>
+        <Link to="/docs/getting-started" className="btn btn-secondary border-rounded-4x mt-2">
+            Installation
+          </Link>
         </div>
       </div>
     </Layout>
