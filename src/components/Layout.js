@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import "../../../css/nostyle.css"
+import "/css/nostyle.css"
 import Navbar from "../components/Navbar"
 
 function Layout({ children }) {
