@@ -11,13 +11,15 @@ function Template({ data }) {
   return (
     <Layout>
       <Helmet>
-        <title>title | NOStyleCSS</title>
+        <title>{title} | NOStyleCSS</title>
       </Helmet>
       <div className="main height-100vh min-height-700 max-height-800">
         <div className="container max-width-1100">
           <h1 className="font-size-4xl text-primary mt-12 mb-12">Docs</h1>
-          <h2 className="font-size-3xl text-yellow-400 mb-10">title</h2>
-          <p>content</p>
+          <h2 className="font-size-3xl text-yellow-400 mb-10">{title}</h2>
+          <div
+          dangerouslySetInnerHTML={{ __html: content }}
+          />
         </div>
       </div>
     </Layout>
