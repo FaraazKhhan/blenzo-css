@@ -1,6 +1,6 @@
 ---
-title: "Getting started"
-slug: "/getting-started"
+title: "Installation"
+slug: "/installation"
 ---
 
 # Installation

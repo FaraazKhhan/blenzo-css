@@ -1,6 +1,22 @@
-import React from "react"
+import React, { useState } from "react"
+import {Link, graphql, useStaticQuery} from 'gatsby'
 
 function Sidebar() {
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark {
+        nodes {
+          frontmatter {
+            slug
+            title
+          }
+        }
+      }
+    }
+  `)
+
+  const [nodes] = useState(data.allMarkdownRemark.nodes)
+
   return (
     <nav
       style={{
@@ -9,18 +25,22 @@ function Sidebar() {
         width: "30%",
         maxWidth: "300px",
       }}
+
+      className="flex-dir-col justify-content-center align-items-start"
     >
-      <h3>Docs</h3>
+      <h3>
+        <Link className="font-size-lg text-white" to="/docs">Docs</Link>
+      </h3>
       <ul>
-        <li>Getting started</li>
-        <li>Navbar</li>
-        <li>Buttons</li>
-        <li>Forms</li>
-        <li>Checkbox</li>
-        <li>Links</li>
-        <li>Icons</li>
-        <li>Containers</li>
-        <li>Footer</li>
+        {
+          nodes.map(item => (
+            <li key={item.frontmatter.slug}>
+              <Link className="text-gray-300" to={"/docs" + item.frontmatter.slug}>
+                {item.frontmatter.title}
+              </Link>
+            </li>
+          ))
+        }
       </ul>
     </nav>
   )

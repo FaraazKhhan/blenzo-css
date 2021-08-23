@@ -2,6 +2,7 @@ import React from "react"
 import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 import Layout from "../../components/Layout"
+import { DocsLayout } from "../../components/DocsLayout"
 
 function Template({ data }) {
   const title = data.markdownRemark.frontmatter.title
@@ -10,17 +11,19 @@ function Template({ data }) {
 
   return (
     <Layout>
-      <Helmet>
-        <title>{title} | NOStyleCSS</title>
-      </Helmet>
-      <div className="main height-100vh min-height-700 max-height-800">
-        <div className="container max-width-1100">
-          <h1 className="font-size-3xl text-green-400 mt-15 mb-10">{title}</h1>
-          <div
-          dangerouslySetInnerHTML={{ __html: content }}
-          />
+      <DocsLayout>
+        <Helmet>
+          <title>{title} | NOStyleCSS</title>
+        </Helmet>
+        <div className="main height-100vh min-height-700 max-height-800">
+          <div className="container max-width-1100">
+            <h1 className="font-size-3xl text-green-400 mt-15 mb-10">{title}</h1>
+            <div
+            dangerouslySetInnerHTML={{ __html: content }}
+            />
+          </div>
         </div>
-      </div>
+      </DocsLayout>
     </Layout>
   )
 }
