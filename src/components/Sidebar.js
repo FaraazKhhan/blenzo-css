@@ -35,7 +35,7 @@ function Sidebar() {
         {
           nodes.map(item => (
             <li key={item.frontmatter.slug}>
-              <Link className="text-gray-300" to={"/docs" + item.frontmatter.slug}>
+              <Link className="font-size-xs text-primary" to={"/docs" + item.frontmatter.slug}>
                 {item.frontmatter.title}
               </Link>
             </li>
