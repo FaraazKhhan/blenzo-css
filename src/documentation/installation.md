@@ -3,12 +3,12 @@ title: "Installation"
 slug: "/installation"
 ---
 
-# Installation
+<h1 class="font-size-4xl text-primary font-weight-bold">Follow these simple steps to start with designing without any CSS</h1>
 
-Since this is your first app with **NOStyleCSS**, you have to link **NOStyleCSS** with your project.
+Since this is your first app with <span class="text-indigo-400">NOStyleCSS</span>, you have to link <span class="text-indigo-400">NOStyleCSS</span> with your project.
 
 <h3 class="mt-10">Normal HTML</h3>
-<div class="py-2 px-6 border-1 border-rounded-3x border-gray-500 border-solid mt-5" style="overflow-x: auto; min-width: 200px;">
+<div class="py-2 px-4 border-1 border-rounded-3x border-gray-500 border-solid mt-5" style="overflow-x: auto; min-width: 200px;">
 <pre>
 <code class="text-gray-300">
 &lt;link rel="stylesheet" href="https://faraazkhhan.github.io/nostyle-css/static/css/nostyle.css"&gt;&lt;/link&gt;
