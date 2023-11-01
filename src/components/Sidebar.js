@@ -26,16 +26,16 @@ function Sidebar() {
         maxWidth: "300px",
       }}
 
-      className="flex-dir-col justify-content-center align-items-start"
+      className="flex-dir-col justify-content-start align-items-start py-5"
     >
       <h3>
-        <Link className="font-size-lg text-white" to="/docs">Docs</Link>
+        <Link className="font-size-lg text-white no-decoration" to="/docs">Docs</Link>
       </h3>
       <ul>
         {
           nodes.map(item => (
-            <li key={item.frontmatter.slug}>
-              <Link className="font-size-xs text-primary" to={"/docs" + item.frontmatter.slug}>
+            <li key={item.frontmatter.slug} className="list-style-none">
+              <Link className="font-size-xs text-pink-400 no-decoration" to={"/docs" + item.frontmatter.slug}>
                 {item.frontmatter.title}
               </Link>
             </li>
