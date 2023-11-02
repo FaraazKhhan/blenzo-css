@@ -2,6 +2,18 @@ import React from "react"
 import { Link } from "gatsby"
 
 function Navbar() {
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log('The link was clicked.');
+    const doc = document.documentElement.getAttribute
+    const doc = document.documentElement;
+    if (doc.getAttribute('data-theme') === 'dark') {
+      doc.setAttribute('data-theme', 'light');
+    } else {
+      doc.setAttribute('data-theme', 'dark');
+    }
+  }
+  
   return (
     <header className="navbar">
       <div className="navbar-container max-width-1100">
@@ -35,6 +47,9 @@ function Navbar() {
             </li>
             <li className="navbar-link">
               <Link to="/about">About</Link>
+            </li>
+            <li className="navbar-link">
+              <a onClick={handleClick}>Theme</Link>
             </li>
           </ul>
         </div>
