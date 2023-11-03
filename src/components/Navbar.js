@@ -8,8 +8,10 @@ function Navbar() {
     const doc = document.documentElement;
     if (doc.getAttribute('data-theme') === 'dark') {
       doc.setAttribute('data-theme', 'light');
+      sessionStorage.setItem('theme', 'light');
     } else {
       doc.setAttribute('data-theme', 'dark');
+      sessionStorage.setItem('theme', 'dark');
     }
   }
   
