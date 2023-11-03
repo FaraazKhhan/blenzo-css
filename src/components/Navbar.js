@@ -5,7 +5,6 @@ function Navbar() {
   const handleClick = (e) => {
     e.preventDefault();
     console.log('The link was clicked.');
-    const doc = document.documentElement.getAttribute
     const doc = document.documentElement;
     if (doc.getAttribute('data-theme') === 'dark') {
       doc.setAttribute('data-theme', 'light');
