@@ -4,7 +4,11 @@ import Navbar from "../components/Navbar"
 
 function Layout({ children }) {
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "dark")
+    let theme = "dark";
+    if (sessionStorage.getItem('theme')) {
+      theme = sessionStorage.getItem('theme')
+    }
+    document.documentElement.setAttribute("data-theme", theme)
   }, [])
 
   return (
