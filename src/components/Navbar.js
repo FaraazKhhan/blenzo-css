@@ -50,7 +50,7 @@ function Navbar() {
               <Link to="/about">About</Link>
             </li>
             <li className="navbar-link">
-              <a onClick={handleClick}>Theme</a>
+              <a onClick={handleClick}>{ sessionStorage.getItem('theme') === "dark" ? "🌙" : "☀️" }</a>
             </li>
           </ul>
         </div>
