@@ -48,7 +48,7 @@ function Navbar() {
               <Link to="/about">About</Link>
             </li>
             <li className="navbar-link">
-              <a onClick={handleClick}>Theme</Link>
+              <a onClick={handleClick}>Theme</a>
             </li>
           </ul>
         </div>
