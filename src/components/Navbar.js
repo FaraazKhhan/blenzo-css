@@ -1,7 +1,18 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
 function Navbar() {
+  const [themeIcon, setThemeIcon] = useState((sessionStorage.getItem('theme') === "dark" ? "🌙" : "☀️") || "🌙")
+
+  useEffect(() => {
+    const theme = sessionStorage.getItem('theme');
+
+    if (theme) {
+      setThemeIcon(theme === 'dark' ? "🌙" : "☀️");
+    }
+  }, [])
+
+
   const handleClick = (e) => {
     e.preventDefault();
     console.log('The link was clicked.');
@@ -14,7 +25,7 @@ function Navbar() {
       sessionStorage.setItem('theme', 'dark');
     }
   }
-  
+
   return (
     <header className="navbar">
       <div className="navbar-container max-width-1100">
@@ -50,7 +61,7 @@ function Navbar() {
               <Link to="/about">About</Link>
             </li>
             <li className="navbar-link">
-              <a onClick={handleClick}>{ sessionStorage.getItem('theme') === "dark" ? "🌙" : "☀️" }</a>
+              <a onClick={handleClick}>{themeIcon}</a>
             </li>
           </ul>
         </div>
