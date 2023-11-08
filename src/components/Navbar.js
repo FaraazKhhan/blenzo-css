@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
 function Navbar() {
-  const [themeIcon, setThemeIcon] = useState((sessionStorage.getItem('theme') === "dark" ? "🌙" : "☀️") || "🌙")
+  const [themeIcon, setThemeIcon] = useState((window.sessionStorage.getItem('theme') === "dark" ? "🌙" : "☀️") || "🌙")
 
   useEffect(() => {
-    const theme = sessionStorage.getItem('theme');
+    const theme = window.sessionStorage.getItem('theme');
 
     if (theme) {
       setThemeIcon(theme === 'dark' ? "🌙" : "☀️");
