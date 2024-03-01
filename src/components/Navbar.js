@@ -3,24 +3,24 @@ import { Link } from "gatsby"
 import { ThemeContext } from '../contexts/Theme'
 import Switch from './Switch'
 
-const getThemeIcon = (theme) => {
-  if (theme) {
-    if (theme === "dark") {
-      return "🌙"
-    } else {
-      return "☀️"
-    }
-  }
-  return "🌙"
-}
+// const getThemeIcon = (theme) => {
+//   if (theme) {
+//     if (theme === "dark") {
+//       return "🌙"
+//     } else {
+//       return "☀️"
+//     }
+//   }
+//   return "🌙"
+// }
 
 function Navbar() {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const [themeIcon, setThemeIcon] = useState(getThemeIcon(theme))
+  // const [themeIcon, setThemeIcon] = useState(getThemeIcon(theme))
 
-  useEffect(() => {
-    setThemeIcon(theme === 'dark' ? "🌙" : "☀️");
-  }, [theme])
+  // useEffect(() => {
+  //   setThemeIcon(theme === 'dark' ? "🌙" : "☀️");
+  // }, [theme])
 
   return (
     <header className="navbar">
@@ -57,6 +57,7 @@ function Navbar() {
               <Link to="/about">About</Link>
             </li>
             <li className="navbar-link">
+              // <Switch icon={themeIcon} onClickFunc={toggleTheme} />
               <Switch icon={themeIcon} onClickFunc={toggleTheme} />
             </li>
           </ul>
