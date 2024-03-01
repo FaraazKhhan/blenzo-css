@@ -3,13 +3,16 @@ import React, { useEffect, createContext, useState } from "react";
 const ThemeContext = createContext();
 
 const getTheme = () => {
-    const theme = window.sessionStorage.getItem("theme");
-    if (!theme) {
-        window.sessionStorage.setItem("theme", "dark");
-        return "dark";
-    } else {
-        return theme;
+    if (typeof window !== "undefined") {
+        const theme = window.localStorage.getItem("theme");
+        if (!theme) {
+            window.localStorage.setItem("theme", "dark");
+            return "dark";
+        } else {
+            return theme;
+        }
     }
+    return "dark";
 };
 
 const ThemeProvider = ({ children }) => {
@@ -26,7 +29,7 @@ const ThemeProvider = ({ children }) => {
     useEffect(() => {
         (() => {
             document.documentElement.setAttribute('data-theme', theme);
-            window.sessionStorage.setItem("theme", theme);
+            if (typeof window !== "undefined") window.localStorage.setItem("theme", theme);
         })();
     }, [theme]);
 
