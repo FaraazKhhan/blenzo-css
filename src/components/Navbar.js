@@ -1,30 +1,26 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
+import { ThemeContext } from '../contexts/Theme'
+import Switch from './Switch'
 
-function Navbar() {
-  const [themeIcon, setThemeIcon] = useState((window.sessionStorage.getItem('theme') === "dark" ? "🌙" : "☀️") || "🌙")
-
-  useEffect(() => {
-    const theme = window.sessionStorage.getItem('theme');
-
-    if (theme) {
-      setThemeIcon(theme === 'dark' ? "🌙" : "☀️");
-    }
-  }, [])
-
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    console.log('The link was clicked.');
-    const doc = document.documentElement;
-    if (doc.getAttribute('data-theme') === 'dark') {
-      doc.setAttribute('data-theme', 'light');
-      sessionStorage.setItem('theme', 'light');
+const getThemeIcon = (theme) => {
+  if (theme) {
+    if (theme === "dark") {
+      return "🌙"
     } else {
-      doc.setAttribute('data-theme', 'dark');
-      sessionStorage.setItem('theme', 'dark');
+      return "☀️"
     }
   }
+  return "🌙"
+}
+
+function Navbar() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  const [themeIcon, setThemeIcon] = useState(getThemeIcon(theme))
+
+  useEffect(() => {
+    setThemeIcon(theme === 'dark' ? "🌙" : "☀️");
+  }, [theme])
 
   return (
     <header className="navbar">
@@ -61,7 +57,7 @@ function Navbar() {
               <Link to="/about">About</Link>
             </li>
             <li className="navbar-link">
-              <a onClick={handleClick}>{themeIcon}</a>
+              <Switch icon={themeIcon} onClickFunc={toggleTheme} />
             </li>
           </ul>
         </div>

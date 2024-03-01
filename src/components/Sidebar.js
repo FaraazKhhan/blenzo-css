@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import {Link, graphql, useStaticQuery} from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 
 function Sidebar() {
   const data = useStaticQuery(graphql`
