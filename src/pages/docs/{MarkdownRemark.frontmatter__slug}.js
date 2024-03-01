@@ -19,7 +19,7 @@ function Template({ data }) {
           <div className="container max-width-1100">
             <h1 className="font-size-3xl text-green-400 mt-15 mb-10">{title}</h1>
             <div
-            dangerouslySetInnerHTML={{ __html: content }}
+              dangerouslySetInnerHTML={{ __html: content }}
             />
           </div>
         </div>
