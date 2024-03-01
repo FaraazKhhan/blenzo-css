@@ -3,9 +3,9 @@ import React, { useEffect, createContext, useState } from "react";
 const ThemeContext = createContext();
 
 const getTheme = () => {
-    const theme = window.localStorage.getItem("theme");
+    const theme = localStorage.getItem("theme");
     if (!theme) {
-        window.localStorage.setItem("theme", "dark");
+        localStorage.setItem("theme", "dark");
         return "dark";
     } else {
         return theme;
@@ -26,7 +26,7 @@ const ThemeProvider = ({ children }) => {
     useEffect(() => {
         (() => {
             document.documentElement.setAttribute('data-theme', theme);
-            window.localStorage.setItem("theme", theme);
+            localStorage.setItem("theme", theme);
         })();
     }, [theme]);
 
