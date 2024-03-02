@@ -10,7 +10,10 @@ function Switch({ icon = '', handler = '', defaultChecked = false }) {
     return (
         <label className="switch">
             <input type="checkbox" onChange={changeIcon} checked={defaultChecked} />
-            <span className="slider round"></span>
+            <span className="slider round">
+                <img src="../../static/svg/sun.svg" alt="ON" />
+                <img src="../../static/svg/moon.svg" alt="OFF" />
+            </span>
         </label>
     )
 }

@@ -23,6 +23,14 @@
     background-color: var(--color-gray-500);
     -webkit-transition: .4s;
     transition: .4s;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.slider img {
+    width: 1.5rem;
 }
 
 .slider::before {
