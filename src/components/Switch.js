@@ -9,7 +9,7 @@ function Switch({ icon = '', handler = '', defaultChecked = false }) {
 
     return (
         <label className="switch">
-            <input type="checkbox" onChange={changeIcon} defaultChecked={defaultChecked} />
+            <input type="checkbox" onChange={changeIcon} checked={defaultChecked} />
             <span className="slider round"></span>
         </label>
     )
