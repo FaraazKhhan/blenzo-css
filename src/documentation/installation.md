@@ -3,7 +3,7 @@ title: "Installation"
 slug: "/installation"
 ---
 
-<h1 class="font-size-4xl text-primary font-weight-bold">Follow these simple steps to start with designing without any CSS</h1>
+<h1>Follow these simple steps to start with designing without any CSS</h1>
 
 Since this is your first app with <span class="text-indigo-400">NOStyleCSS</span>, you have to link <span class="text-indigo-400">NOStyleCSS</span> with your project.
 

@@ -21,16 +21,18 @@ export default function Home({ data }) {
               <span>Style</span>::
               <span className="text-gray">CSS</span>
             </span>
-            : Free, open-source CSS framework.
+            : Your free and open-source CSS framework for rapid development.
           </p>
           <h2 className="font-size-4xl line-height-2x mb-10 text-primary font-weight-bold">
-            Build your website faster without having zero experience of CSS.
+            Effortlessly Build Beautiful Websites with NOStyle
           </h2>
           <p className="text-gray max-width-800 mb-10">
-            NOStyleCSS gives your website a modern & asthetic look. You don't
-            even need to leave your HTML, just add NOStyleCSS classes to your
-            HTML element and NOStyleCSS will do all the work for you under the
-            hood.
+            Quickly build responsive layouts and modern websites without writing extensive CSS
+            <ul className="mt-2 flex justify-content-space-around">
+              <li>Easy to Learn & Use</li>
+              <li>Customizable & Extensible</li>
+              <li>Community Driven</li>
+            </ul>
           </p>
 
           <Link to="/docs" className="btn btn-secondary border-rounded-4x mt-2">

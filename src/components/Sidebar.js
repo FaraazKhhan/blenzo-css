@@ -28,8 +28,8 @@ function Sidebar() {
 
       className="flex-dir-col justify-content-start align-items-start py-5"
     >
-      <h3>
-        <Link className="font-size-lg text-white no-decoration" to="/docs">Docs</Link>
+      <h3 className="font-size-lg text-gray-900 no-decoration">
+        Docs
       </h3>
       <ul>
         {
