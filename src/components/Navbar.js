@@ -48,9 +48,9 @@ function Navbar() {
       <div className="navbar-container max-width-1100">
         <h3 className="navbar-logo">
           <Link to="/">
-            <span style={{ fontFamily: "Zen Dots" }}>
+            <span className="russo-one-regular">
               <span className="text-primary">NO</span>
-              <span>Style</span>
+              <span>Style</span>::
               <span className="text-gray">CSS</span>
             </span>
           </Link>
