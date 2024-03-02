@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
+import Switch from './Switch'
 
 const getTheme = () => {
   if (typeof window !== "undefined") {
