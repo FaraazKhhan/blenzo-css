@@ -17,7 +17,7 @@ const getTheme = () => {
 };
 
 const getThemeIcon = (theme) => {
-  const basePath = 'static/svg';
+  const basePath = '../../static/svg';
   if (theme === ThemeConstants.DARK) {
     return basePath + '/moon.svg';
   }
