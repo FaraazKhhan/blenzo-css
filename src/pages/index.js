@@ -28,7 +28,7 @@ export default function Home({ data }) {
           </h2>
           <p className="text-gray max-width-800 mb-10">
             Quickly build responsive layouts and modern websites without writing extensive CSS
-            <ul className="mt-2 flex flex-dir-col-sm justify-content-space-around">
+            <ul className="mt-2 flex flex-dir-col-sm justify-content-space-between">
               <li>Easy to Learn & Use</li>
               <li>Customizable & Extensible</li>
               <li>Community Driven</li>

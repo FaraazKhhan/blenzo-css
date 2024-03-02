@@ -809,6 +809,10 @@ h6 {
   align-items: center;
 }
 
+.flex-dir-col-sm {
+  flex-direction: column;
+}
+
 .flex-dir-col {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -980,6 +984,12 @@ h6 {
   -webkit-box-pack: space-evenly;
   -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
+}
+
+.justify-content-space-between {
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
 }
 
 .btn:focus,
@@ -3899,7 +3909,7 @@ textarea.form-input {
   }
 
   .flex-dir-col-sm {
-    flex-direction: column;
+    flex-direction: unset;
   }
 }
 
@@ -3907,6 +3917,10 @@ textarea.form-input {
   .navbar {
     height: 66px;
     max-height: 66px;
+  }
+
+  .flex-dir-col-sm {
+    flex-direction: unset;
   }
 
   .navbar-menu {
@@ -4012,6 +4026,10 @@ textarea.form-input {
   body {
     line-height: 2;
     font-size: 18px;
+  }
+
+  .flex-dir-col-sm {
+    flex-direction: unset;
   }
 
   .navbar-menu .navbar-link-list {
