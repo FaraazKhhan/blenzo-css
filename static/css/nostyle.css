@@ -856,43 +856,37 @@ h6 {
 }
 
 .flex-wrap-100 {
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   -webkit-box-flex: 1;
   -ms-flex: 1 1 100px;
   flex: 1 1 100px;
 }
 
 .flex-wrap-200 {
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   -webkit-box-flex: 1;
   -ms-flex: 1 1 200px;
   flex: 1 1 200px;
 }
 
 .flex-wrap-300 {
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   -webkit-box-flex: 1;
   -ms-flex: 1 1 300px;
   flex: 1 1 300px;
 }
 
 .flex-wrap-400 {
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   -webkit-box-flex: 1;
   -ms-flex: 1 1 400px;
   flex: 1 1 400px;
 }
 
 .flex-wrap-500 {
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   -webkit-box-flex: 1;
   -ms-flex: 1 1 500px;
   flex: 1 1 500px;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 /* GRID */
