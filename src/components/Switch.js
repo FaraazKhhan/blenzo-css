@@ -1,5 +1,5 @@
 import React from 'react'
-import "static/css/switch.css"
+import "../../static/css/switch.css"
 
 function Switch(props) {
     const changeIcon = (e) => {
