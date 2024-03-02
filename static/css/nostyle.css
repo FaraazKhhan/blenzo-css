@@ -3897,6 +3897,10 @@ textarea.form-input {
     width: -moz-fit-content;
     width: fit-content;
   }
+
+  .flex-dir-col-sm {
+    flex-direction: column;
+  }
 }
 
 @media screen and (min-width: 745px) {
