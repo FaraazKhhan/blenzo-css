@@ -1,30 +1,45 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
-function Navbar() {
-  const [themeIcon, setThemeIcon] = useState((window.sessionStorage.getItem('theme') === "dark" ? "🌙" : "☀️") || "🌙")
-
-  useEffect(() => {
-    const theme = window.sessionStorage.getItem('theme');
-
-    if (theme) {
-      setThemeIcon(theme === 'dark' ? "🌙" : "☀️");
-    }
-  }, [])
-
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    console.log('The link was clicked.');
-    const doc = document.documentElement;
-    if (doc.getAttribute('data-theme') === 'dark') {
-      doc.setAttribute('data-theme', 'light');
-      sessionStorage.setItem('theme', 'light');
+const getTheme = () => {
+  if (typeof window !== "undefined") {
+    const theme = window.localStorage.getItem("theme");
+    if (!theme) {
+      window.localStorage.setItem("theme", "dark");
+      return "dark";
     } else {
-      doc.setAttribute('data-theme', 'dark');
-      sessionStorage.setItem('theme', 'dark');
+      return theme;
     }
   }
+  return "dark";
+};
+
+const getThemeIcon = (theme) => {
+  const basePath = '../../static/svg';
+  if (theme === "dark") {
+    return basePath + '/moon.svg';
+  }
+  return basePath + '/sun.svg';
+};
+
+function Navbar() {
+  const [theme, setTheme] = useState(getTheme);
+  const [themeIcon, setThemeIcon] = useState(getThemeIcon(theme));
+
+  function toggleTheme() {
+    if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  };
+
+  useEffect(() => {
+    (() => {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (typeof window !== "undefined") window.localStorage.setItem("theme", theme);
+    })();
+  }, [theme]);
 
   return (
     <header className="navbar">
@@ -61,7 +76,7 @@ function Navbar() {
               <Link to="/about">About</Link>
             </li>
             <li className="navbar-link">
-              <a onClick={handleClick}>{themeIcon}</a>
+              <Switch icon={themeIcon} handler={toggleTheme} />
             </li>
           </ul>
         </div>
@@ -70,4 +85,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbar;
