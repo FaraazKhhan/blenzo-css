@@ -1,26 +1,46 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-import { ThemeContext } from '../contexts/Theme'
 import Switch from './Switch'
 
-// const getThemeIcon = (theme) => {
-//   if (theme) {
-//     if (theme === "dark") {
-//       return "🌙"
-//     } else {
-//       return "☀️"
-//     }
-//   }
-//   return "🌙"
-// }
+const getTheme = () => {
+  if (typeof window !== "undefined") {
+    const theme = window.localStorage.getItem("theme");
+    if (!theme) {
+      window.localStorage.setItem("theme", "dark");
+      return "dark";
+    } else {
+      return theme;
+    }
+  }
+  return "dark";
+};
+
+const getThemeIcon = (theme) => {
+  const basePath = '../../static/svg';
+  if (theme === "dark") {
+    return basePath + '/moon.svg';
+  }
+  return basePath + '/sun.svg';
+};
 
 function Navbar() {
-  const { theme, toggleTheme } = useContext(ThemeContext);
-  // const [themeIcon, setThemeIcon] = useState(getThemeIcon(theme))
+  const [theme, setTheme] = useState(getTheme);
+  const [themeIcon, setThemeIcon] = useState(getThemeIcon(theme));
 
-  // useEffect(() => {
-  //   setThemeIcon(theme === 'dark' ? "🌙" : "☀️");
-  // }, [theme])
+  function toggleTheme() {
+    if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  };
+
+  useEffect(() => {
+    (() => {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (typeof window !== "undefined") window.localStorage.setItem("theme", theme);
+    })();
+  }, [theme]);
 
   return (
     <header className="navbar">
@@ -57,8 +77,7 @@ function Navbar() {
               <Link to="/about">About</Link>
             </li>
             <li className="navbar-link">
-              // <Switch icon={themeIcon} onClickFunc={toggleTheme} />
-              <Switch icon={themeIcon} onClickFunc={toggleTheme} />
+              <Switch icon={themeIcon} handler={toggleTheme} />
             </li>
           </ul>
         </div>
@@ -67,4 +86,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbar;

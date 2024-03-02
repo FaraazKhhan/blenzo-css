@@ -1,22 +1,20 @@
 import React from 'react'
-import "../../static/switch.css"
+import "../../static/scss/switch.scss"
 
 function Switch(props) {
     const changeIcon = (e) => {
-        if (props.onClickFunc) {
-            props.onClickFunc();
+        console.debug("Switch.js handler triggered::Props ", props)
+        if (props.handler) {
+            props.handler();
         }
     }
 
-
     return (
-        <>
-            <label class="switch">
-                <input type="checkbox" onChange={changeIcon} />
-                <span class="slider round"></span>
-            </label>
-        </>
+        <label className="switch">
+            <input type="checkbox" onChange={changeIcon} />
+            <span className="slider round"></span>
+        </label>
     )
 }
 
-export default Switch
+export default Switch;
