@@ -78,7 +78,7 @@ function Navbar() {
               <Link to="/about">About</Link>
             </li>
             <li className="navbar-link">
-              <Switch icon={themeIcon} handler={toggleTheme} initialChecked={theme} />
+              <Switch icon={themeIcon} handler={toggleTheme} defaultChecked={theme === 'dark' ? true : false} />
             </li>
           </ul>
         </div>
