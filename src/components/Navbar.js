@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import Switch from './Switch'
+import ThemeConstants from '../constants/ThemeConstants'
 
 const getTheme = () => {
   if (typeof window !== "undefined") {
     const theme = window.localStorage.getItem("theme");
     if (!theme) {
-      window.localStorage.setItem("theme", "dark");
-      return "dark";
+      window.localStorage.setItem("theme", ThemeConstants.DARK);
+      return ThemeConstants.DARK;
     } else {
       return theme;
     }
   }
-  return "dark";
+  return ThemeConstants.DARK;
 };
 
 const getThemeIcon = (theme) => {
-  const basePath = '../../static/svg';
-  if (theme === "dark") {
+  const basePath = 'static/svg';
+  if (theme === ThemeConstants.DARK) {
     return basePath + '/moon.svg';
   }
   return basePath + '/sun.svg';
@@ -28,10 +29,10 @@ function Navbar() {
   const [themeIcon, setThemeIcon] = useState(getThemeIcon(theme));
 
   function toggleTheme() {
-    if (theme === "dark") {
-      setTheme("light");
+    if (theme === ThemeConstants.DARK) {
+      setTheme(ThemeConstants.LIGHT);
     } else {
-      setTheme("dark");
+      setTheme(ThemeConstants.DARK);
     }
   };
 
