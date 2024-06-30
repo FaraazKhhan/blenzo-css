@@ -1,0 +1,16 @@
+{
+  "name": "nostyle",
+  "version": "1.0.0",
+  "description": "NoStyle CSS",
+  "main": "css/main.css",
+  "repository": "https://github.com/fvrvz/nostyle-css",
+  "author": "Faraaz Khan",
+  "license": "ISC",
+  "scripts": {
+    "sass:dev": "sass --watch --update --style=expanded sass:css2",
+    "sass:prod": "sass --no-source-map --style=compressed sass:css2"
+  },
+  "devDependencies": {
+    "sass": "^1.77.6"
+  }
+}
